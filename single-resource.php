@@ -4,14 +4,14 @@
 
 		<section id="post_main">
 			<article id="post-<?php the_ID(); ?>">
-
-
-				<header>
-					
-					<h1><?php the_title(); ?></h1>
-					
-
-					
+				
+				<?php
+				echo('<div id="opening_image" >');
+				the_post_thumbnail('slider'); 
+				echo('</div>');
+				?>
+				<header>	
+					<h1><?php the_title(); ?></h1>	
 				</header>
 
 					<section id="game_caption">
@@ -22,6 +22,50 @@
 						?>
 						</p>
 					</section><!-- game_caption -->
+					
+					<?
+					$my_attachments = $attachments->the_meta();
+					$my_links = $link_out->the_meta(); 
+					if(sizeof($my_links['out_links']) > 0 || sizeof($my_attachments['docs']) > 0){ 
+					?>
+					<article id="game_footer_links" class="bio_article">
+						<h3>LINKS AND DOWNLOADS</h3>
+						<?	
+							$i=1;
+		
+							foreach($my_links['out_links'] as $link)
+							{
+			
+								if($i%2==0){
+									?>
+								<div class="bio_badge yellow">
+								<? }else{ ?>
+								<div class="bio_badge blue">	
+								<? } ?>
+									<a href="<? echo $link['link']; ?>" ><p><? echo $link['title']; ?></p></a>
+								</div><!-- bio_links -->
+						<?
+						 		$i++;
+							} 
+							
+							foreach($my_attachments['docs'] as $download)
+								{
+
+									if($i%2==0){
+										?>
+									<div class="bio_badge yellow">
+									<? }else{ ?>
+									<div class="bio_badge blue">	
+									<? } ?>
+										<a href="<? echo $download['link']; ?>" ><p><? echo $download['title']; ?></p></a>
+									</div><!-- bio_links -->
+							<?
+							 		$i++;
+								}
+						?>
+					</article><!-- game_footer_links -->
+					<? } ?>
+					
 					<section id="game_meta">
 						<article id="game_context">
 							<h3>CONTEXT</h3>
@@ -29,7 +73,8 @@
 								$context->the_field('context');
 								$context->the_value();
 							?>
-							<br/>Created <?php the_time('F jS, Y'); ?>
+							<!-- commented out until we create a seperate type for events, etc... -->
+							<!-- <br/>Created <?php the_time('F jS, Y'); ?> -->
 						</article><!-- game_context -->
 						<article id="game_medium">
 							<h3>MEDIUM</h3>
@@ -58,13 +103,9 @@
 						</article><!-- game_credits -->
 
 					</section><!-- game_meta -->
-					<?php
-					echo('<div id="opening_image" >');
-					the_post_thumbnail('slider'); 
-					echo('</div>');
-					?>
-					<?php the_content('Read more on "'.the_title('', '', false).'" &raquo;'); ?>
+					<hr/>
 					
+					<?php the_content(); ?>
 
 			</article>
 

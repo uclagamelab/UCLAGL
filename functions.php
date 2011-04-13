@@ -29,7 +29,7 @@ add_filter( 'pre_get_posts', 'my_get_posts' );
 
 function my_get_posts( $query ) {
 	if ( is_home() )
-		$query->set( 'post_type', array( 'post', 'page', 'game', 'person') );
+		$query->set( 'post_type', array( 'post', 'page', 'game', 'resource', 'person') );
 
 	return $query;
 }
@@ -46,9 +46,9 @@ if (is_admin()) wp_enqueue_style('custom_meta_css', _TEMPLATEURL . '/custom/meta
 $game_credits = new WPAlchemy_MetaBox(array
 (
 	'id' => '_game_credits', // underscore prefix hides fields from the custom fields area
-	'title' => 'Game Credits',
+	'title' => 'Credits',
 	'template' => TEMPLATEPATH . '/custom/credits_meta.php',
-	'types' => array('game', 'post'), // added only for custom post type "game"
+	'types' => array('game'), // added only for custom post type "game"
 	'priority' => 'low',
 ));
 
@@ -101,7 +101,16 @@ $short_description = new WPAlchemy_MetaBox(array
 	'id' => '_short_description',
 	'title' => 'Short Description',	
 	'template' => TEMPLATEPATH . '/custom/short_description_meta.php',
-	'types' => array('game','person', 'post', 'page'),
+	'types' => array('game', 'resource', 'person', 'post', 'page'),
+	'priority' => 'high',
+));
+
+$author_bio = new WPAlchemy_MetaBox(array
+(
+	'id' => '_author_bio',
+	'title' => 'About the author',	
+	'template' => TEMPLATEPATH . '/custom/author_bio_meta.php',
+	'types' => array('resource'),
 	'priority' => 'high',
 ));
 
@@ -110,7 +119,7 @@ $link_out = new WPAlchemy_MetaBox(array
 	'id' => '_link_out',
 	'title' => 'Link Out',	
 	'template' => TEMPLATEPATH . '/custom/link_out_meta.php',
-	'types' => array('game','person', 'post'),
+	'types' => array('game', 'resource', 'person', 'post'),
 	'priority' => 'low',
 ));
 
@@ -139,7 +148,7 @@ $attachments = new WPAlchemy_MetaBox(array
 	'id' => '_attachments',
 	'title' => 'Attachments',	
 	'template' => TEMPLATEPATH . '/custom/attachments_meta.php',
-	'types' => array('game', 'post'),
+	'types' => array('game', 'resource', 'post'),
 	'priority' => 'low',
 ));
 
@@ -181,6 +190,7 @@ if (function_exists('register_sidebar')) {
 
 function create_post_types(){
 	create_game_type();
+	create_resource_type();
 	create_people_type();
 	// create_context_taxonomy();
 }
@@ -232,6 +242,53 @@ function create_game_type() {
 		'taxonomies' => array('post_tag',),
 	); 
 	register_post_type('game',$args);
+}
+
+function create_resource_type() {
+	
+	$capabilities = array(
+		'publish_posts' => 'publish_resources',
+		'edit_posts' => 'edit_resources',
+		'edit_others_posts' => 'edit_others_resources',
+		'delete_posts' => 'delete_resources',
+		'delete_others_posts' => 'delete_others_resources',
+		'read_private_posts' => 'read_private_resources',
+		'edit_post' => 'edit_resources',
+		'delete_post' => 'delete_resources',
+		'read_post' => 'read_resources',
+	); 
+	
+	$labels = array(
+		'name' => _x('Resources', 'post type general name'),
+		'singular_name' => _x('Resource', 'post type singular name'),
+		'add_new' => _x('Add Resource', 'game'),
+		'add_new_item' => __('Add New Resource'),
+		'edit_item' => __('Edit Resource'),
+		'new_item' => __('New Resource'),
+		'view_item' => __('View Resource'),
+		'search_items' => __('Search Resource'),
+		'not_found' =>  __('No Games Resource'),
+		'not_found_in_trash' => __('No Resources found in Trash'), 
+		'parent_item_colon' => ''
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'_builtin' => false, // It's a custom post type, not built in!
+		'publicly_queryable' => true,
+		'show_ui' => true, 
+		'query_var' => true,
+		'rewrite' => array("slug" => "resources"), // Permalinks format
+		'register_meta_box_cb' => 'add_resource_metaboxes',
+		'capability_type' => 'resource',
+		'capabilities' => $capabilities,
+		'hierarchical' => true,
+		'supports' => array('title','editor','thumbnail',),
+		'menu_position' => 5,
+		'menu_icon' => get_stylesheet_directory_uri() . '/images/star.png',
+		'taxonomies' => array('post_tag','category'),
+	); 
+	register_post_type('resource',$args);
 }
 
 function create_people_type(){
@@ -326,6 +383,23 @@ function my_post_updated_messages( $messages ) {
 	    date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
 	  10 => sprintf( __('Game draft updated. <a target="_blank" href="%s">Preview Game</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
 	);
+	
+	$messages['resource'] = array(
+	  0 => '', // Unused. Messages start at index 1.
+	  1 => sprintf( __('Resource updated. <a href="%s">View Resource</a>'), esc_url( get_permalink($post_ID) ) ),
+	  2 => __('Custom field updated.'),
+	  3 => __('Custom field deleted.'),
+	  4 => __('Resource updated.'),
+	  /* translators: %s: date and time of the revision */
+	  5 => isset($_GET['revision']) ? sprintf( __('Resource restored to revision from %s'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+	  6 => sprintf( __('Resource published. <a href="%s">View Resource</a>'), esc_url( get_permalink($post_ID) ) ),
+	  7 => __('Resource saved.'),
+	  8 => sprintf( __('Resource submitted. <a target="_blank" href="%s">Preview Resource</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+	  9 => sprintf( __('Resource scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview Resource</a>'),
+	    // translators: Publish box date format, see http://php.net/date
+	    date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
+	  10 => sprintf( __('Resource draft updated. <a target="_blank" href="%s">Preview Resource</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+	);
 
 	$messages['person'] = array(
 	  0 => '', // Unused. Messages start at index 1.
@@ -404,6 +478,15 @@ function my_map_meta_cap( $caps, $cap, $user_id, $args ) {
 		$caps = array();
 	}
 	
+	/* If editing, deleting, or reading a resource, get the post and post type object. */
+	if ( 'edit_resouce' == $cap || 'delete_resource' == $cap || 'read_resouce' == $cap  ) {
+		$post = get_post( $args[0] );
+		$post_type = get_post_type_object( $post->post_type );
+
+		/* Set an empty array for the caps. */
+		$caps = array();
+	}
+	
 	if ( 'edit_person' == $cap || 'delete_person' == $cap || 'read_person' == $cap  ) {
 		$post = get_post( $args[0] );
 		$post_type = get_post_type_object( $post->post_type );
@@ -427,6 +510,21 @@ function my_map_meta_cap( $caps, $cap, $user_id, $args ) {
 			$caps[] = $post_type->cap->edit_others_posts;
 	}
 	
+	/* If editing a resource, assign the required capability. */
+	if ( 'edit_resource' == $cap ) {
+		if ( $user_id == $post->post_author )
+			$caps[] = $post_type->cap->edit_posts;
+		else
+			$caps[] = $post_type->cap->edit_others_posts;
+	}
+	
+	if ( 'edit_others_resource' == $cap ) {
+		if ( $user_id == $post->post_author )
+			$caps[] = $post_type->cap->edit_posts;
+		else
+			$caps[] = $post_type->cap->edit_others_posts;
+	}
+	
 	if ( 'edit_person' == $cap ) {
 		if ( $user_id == $post->post_author )
 			$caps[] = $post_type->cap->edit_posts;
@@ -442,6 +540,14 @@ function my_map_meta_cap( $caps, $cap, $user_id, $args ) {
 			$caps[] = $post_type->cap->delete_others_posts;
 	}
 	
+	/* If deleting a resource, assign the required capability. */
+	elseif ( 'delete_resouce' == $cap ) {
+		if ( $user_id == $post->post_author )
+			$caps[] = $post_type->cap->delete_posts;
+		else
+			$caps[] = $post_type->cap->delete_others_posts;
+	}
+	
 	elseif ( 'delete_person' == $cap ) {
 		if ( $user_id == $post->post_author )
 			$caps[] = $post_type->cap->delete_posts;
@@ -451,6 +557,17 @@ function my_map_meta_cap( $caps, $cap, $user_id, $args ) {
 
 	/* If reading a private game, assign the required capability. */
 	elseif ( 'read_game' == $cap ) {
+
+		if ( 'private' != $post->post_status )
+			$caps[] = 'read';
+		elseif ( $user_id == $post->post_author )
+			$caps[] = 'read';
+		else
+			$caps[] = $post_type->cap->read_private_posts;
+	}
+	
+	/* If reading a private resource, assign the required capability. */
+	elseif ( 'read_resouce' == $cap ) {
 
 		if ( 'private' != $post->post_status )
 			$caps[] = 'read';
