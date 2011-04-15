@@ -1,5 +1,15 @@
 <?php
 
+define('_TEMPLATEURL',WP_CONTENT_URL.'/themes/'.basename(TEMPLATEPATH));
+
+if (is_admin())
+{
+	wp_enqueue_script('jQuery UI Core');
+	wp_enqueue_script('custom_js_daterangepicker',_TEMPLATEURL .'/custom/js/daterangepicker.jQuery.js',array('jquery'));
+	wp_enqueue_script('custom_js_custom',_TEMPLATEURL .'/custom/js/custom.js',array('jquery'),NULL,TRUE);
+	wp_enqueue_style('custom_css_daterangepicker',_TEMPLATEURL .'/custom/css/ui-lightness/jquery-ui-1.8.11.custom.css');
+}
+
 //deactivate WordPress function and activate own function
 remove_shortcode('gallery', 'gallery_shortcode');
 add_shortcode('gallery', 'my_gallery_shortcode');
@@ -19,7 +29,7 @@ add_action( 'init', 'create_post_types' );
 
 // add_action( 'init', 'register_my_taxonomies', 0 );
 
-add_action('init', 'register_my_menus');
+add_action('init', 'my_init');
 
 add_filter('post_updated_messages', 'my_post_updated_messages');
 
@@ -51,18 +61,6 @@ $game_credits = new WPAlchemy_MetaBox(array
 	'types' => array('game'), // added only for custom post type "game"
 	'priority' => 'low',
 ));
-
-// $game_feature_status = new WPAlchemy_MetaBox(array
-// (
-// 	'id' => '_game_feature_status', // underscore prefix hides fields from the custom fields area
-// 	'title' => 'Feature Status',
-// 	'template' => TEMPLATEPATH . '/custom/feature_status_meta.php',
-// 	'types' => array('game'), // added only for custom post type "game"
-// 	'priority' => 'low',
-// ));
-
-
-
 
 $person_title = new WPAlchemy_MetaBox(array
 (
@@ -152,11 +150,30 @@ $attachments = new WPAlchemy_MetaBox(array
 	'priority' => 'low',
 ));
 
+$eventdate = new WPAlchemy_MetaBox(array
+(
+	'id' => '_eventdate',
+	'title' => 'Event Date',
+	'template' => TEMPLATEPATH . '/custom/eventdate_meta.php',
+	'types' => array('resource'),
+	'include_category' => array('Events','Lecture', 'Show', 'Workshop'),
+	'context' => 'side',
+));
 
 
 
-function register_my_menus()
+
+function my_init()
 {
+	if (is_admin())
+	{
+		wp_enqueue_script('custom_js_jquery',_TEMPLATEURL .'/custom/js/jquery-1.4.4.min.js');
+		wp_enqueue_script('custom_js_ui',_TEMPLATEURL .'/custom/js/jquery-ui-1.8.6.custom.min.js',array('custom_js_jquery'));
+		wp_enqueue_script('custom_js_timepicker',_TEMPLATEURL .'/custom/js/jquery-ui-timepicker-addon.js',array('custom_js_ui', 'custom_js_jquery'));
+		wp_enqueue_script('custom_js_custom',_TEMPLATEURL .'/custom/js/custom.js',array('custom_js_timepicker','custom_js_jquery'),NULL,TRUE);
+		wp_enqueue_style('custom_css_daterangepicker',_TEMPLATEURL .'/custom/css/ui-lightness/jquery-ui-1.8.11.custom.css');
+	}
+	
 	$menu_locations = array(
 			'main-nav' => 'Header',
 			'footer-nav' => 'Footer',
