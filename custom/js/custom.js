@@ -1,4 +1,4 @@
 jQuery(function($)
 {
-	$('#rangeA').timepicker({});
+	$('#rangeA').datetimepicker();
 });

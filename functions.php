@@ -2,13 +2,6 @@
 
 define('_TEMPLATEURL',WP_CONTENT_URL.'/themes/'.basename(TEMPLATEPATH));
 
-if (is_admin())
-{
-	wp_enqueue_script('jQuery UI Core');
-	wp_enqueue_script('custom_js_daterangepicker',_TEMPLATEURL .'/custom/js/daterangepicker.jQuery.js',array('jquery'));
-	wp_enqueue_script('custom_js_custom',_TEMPLATEURL .'/custom/js/custom.js',array('jquery'),NULL,TRUE);
-	wp_enqueue_style('custom_css_daterangepicker',_TEMPLATEURL .'/custom/css/ui-lightness/jquery-ui-1.8.11.custom.css');
-}
 
 //deactivate WordPress function and activate own function
 remove_shortcode('gallery', 'gallery_shortcode');
@@ -51,7 +44,6 @@ include_once 'WPAlchemy/MetaBox.php';
 
 // include css to style the custom meta boxes, this should be a global
 // stylesheet used by all similar meta boxes
-if (is_admin()) wp_enqueue_style('custom_meta_css', _TEMPLATEURL . '/custom/meta.css');
 
 $game_credits = new WPAlchemy_MetaBox(array
 (
@@ -167,11 +159,12 @@ function my_init()
 {
 	if (is_admin())
 	{
-		wp_enqueue_script('custom_js_jquery',_TEMPLATEURL .'/custom/js/jquery-1.4.4.min.js');
-		wp_enqueue_script('custom_js_ui',_TEMPLATEURL .'/custom/js/jquery-ui-1.8.6.custom.min.js',array('custom_js_jquery'));
+		wp_enqueue_script('custom_js_jquery',_TEMPLATEURL .'/custom/js/jquery-1.5.1.min.js');
+		wp_enqueue_script('custom_js_ui',_TEMPLATEURL .'/custom/js/jquery-ui-1.8.11.custom.min.js',array('custom_js_jquery'));
 		wp_enqueue_script('custom_js_timepicker',_TEMPLATEURL .'/custom/js/jquery-ui-timepicker-addon.js',array('custom_js_ui', 'custom_js_jquery'));
 		wp_enqueue_script('custom_js_custom',_TEMPLATEURL .'/custom/js/custom.js',array('custom_js_timepicker','custom_js_jquery'),NULL,TRUE);
 		wp_enqueue_style('custom_css_daterangepicker',_TEMPLATEURL .'/custom/css/ui-lightness/jquery-ui-1.8.11.custom.css');
+		wp_enqueue_style('custom_meta_css', _TEMPLATEURL . '/custom/meta.css');
 	}
 	
 	$menu_locations = array(
