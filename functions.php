@@ -152,6 +152,15 @@ $eventdate = new WPAlchemy_MetaBox(array
 	'context' => 'side',
 ));
 
+$requirements = new WPAlchemy_MetaBox(array
+(
+	'id' => '_requirements',
+	'title' => 'Requirements',
+	'template' => TEMPLATEPATH . '/custom/requirements_meta.php',
+	'types' => array('resource'),
+	'include_category' => array('Events','Lecture', 'Show', 'Workshop'),
+));
+
 
 
 

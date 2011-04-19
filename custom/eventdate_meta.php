@@ -3,9 +3,10 @@
 	<p>This is the event date</p>
  
 	<p>
-		<?php $metabox->the_field('description'); ?>
-		<input type="text" value="4/23/11" id="rangeA" />
-		<span>Enter the Start and End dates for this event</span>
+		<span>Enter the Start date for this event</span>
+		<input type="text" name="<?php $metabox->the_name('startdate'); ?>" value="<?php $metabox->the_value('startdate'); ?>" id="rangeA"/>
+		<input type="text" name="<?php $metabox->the_name('enddate'); ?>" value="<?php $metabox->the_value('enddate'); ?>" id="rangeB"/>
+
 	</p>
 
 </div>

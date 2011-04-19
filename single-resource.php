@@ -67,40 +67,62 @@
 					<? } ?>
 					
 					<section id="game_meta">
-						<article id="game_context">
-							<h3>CONTEXT</h3>
-							<?php
-								$context->the_field('context');
-								$context->the_value();
-							?>
-							<!-- commented out until we create a seperate type for events, etc... -->
-							<!-- <br/>Created <?php the_time('F jS, Y'); ?> -->
-						</article><!-- game_context -->
-						<article id="game_medium">
-							<h3>MEDIUM</h3>
-							<?php
-								$medium->the_field('medium');
-								$medium->the_value();
+						<article id="datetime">
+							<?php 
+							$eventdate->the_field('startdate');
+							//check if theres a date
+							if($eventdate->get_the_value()){ 
+								echo "<h3>WHEN</h3>";
+								$ss = explode(" ", $eventdate->get_the_value());
+								$eventdate->the_field('enddate');
+								$es = explode(" ", $eventdate->get_the_value());
+								if($ss[0] == $es[0]){
+									if($ss[2]==$es[2]){
+										$eventdate->the_value();
+									}
+									else
+									{
+										echo $ss[0] . " from " . $ss[2] . " to " . $es[2];
+									}
+								}
+								else if($es[0])
+								{
+									echo "From " . $ss[0] . " to " . $es[0];
+								}
+								else
+								{
+									$eventdate->the_field('startdate');
+									$eventdate->the_value();
+								} 
+							}
 							?>
 							
-						</article><!-- game_medium -->
-						<article id="game_credits">
-							<h3>CREDITS</h3>
-							<?php $game_credits->the_meta(); ?>
+						</article><!-- datetime -->
+	
+						<article id="requirements">
 							<?php 
-							while($game_credits->have_fields_and_multi('credits')): 
-								 $game_credits->the_group_open(); 
-								 $game_credits->the_field('person'); 
-								 echo $game_credits->the_value(); 
+							$requirements->the_field('requirements');
+							if($requirements->get_the_value()){ 
+							//check if there are requirements
+								echo "<h3>REQUIREMENTS</h3>";
+								$requirements->the_field('requirements');
+								$requirements->the_value();
+
+							 } 
 							?>
-							&nbsp;:&nbsp;
+						</article><!-- requirements -->
+						
+						<article id="author_bio">
 							<?php
-								 $game_credits->the_field('roll'); 
-								 echo $game_credits->the_value(); 
-								 $game_credits->the_group_close(); 
-							endwhile; 
+							$author_bio->the_field('author_bio');
+							if($author_bio->get_the_value('author_bio'))
+							{
+								echo "<h3>ABOUT THE AUTHOR</H3>";
+								$author_bio->the_value();
+							}
 							?>
-						</article><!-- game_credits -->
+						</article> <!-- author_bio -->
+
 
 					</section><!-- game_meta -->
 					<hr/>
