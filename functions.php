@@ -18,7 +18,6 @@ add_image_size('inline-large', 572, 381, false);
 add_image_size('project-index', 570, 139, true);
 add_image_size('resources-index', 107, 98, true);
 
-add_action( 'init', 'create_post_types' );
 
 // add_action( 'init', 'register_my_taxonomies', 0 );
 
@@ -181,6 +180,7 @@ function my_init()
 			'footer-nav' => 'Footer',
 	);
 	register_nav_menus($menu_locations);
+	create_post_types();
 }
 
 
@@ -306,6 +306,7 @@ function create_resource_type() {
 		'menu_position' => 5,
 		'menu_icon' => get_stylesheet_directory_uri() . '/images/star.png',
 		'taxonomies' => array('post_tag','category'),
+		
 	); 
 	register_post_type('resource',$args);
 }
