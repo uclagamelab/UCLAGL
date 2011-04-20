@@ -49,7 +49,7 @@ $game_credits = new WPAlchemy_MetaBox(array
 	'id' => '_game_credits', // underscore prefix hides fields from the custom fields area
 	'title' => 'Credits',
 	'template' => TEMPLATEPATH . '/custom/credits_meta.php',
-	'types' => array('game'), // added only for custom post type "game"
+	'types' => array('game', 'resource'), // added only for custom post type "game"
 	'priority' => 'low',
 ));
 
@@ -97,7 +97,7 @@ $short_description = new WPAlchemy_MetaBox(array
 $author_bio = new WPAlchemy_MetaBox(array
 (
 	'id' => '_author_bio',
-	'title' => 'About the author',	
+	'title' => 'About the author or interviewer',	
 	'template' => TEMPLATEPATH . '/custom/author_bio_meta.php',
 	'types' => array('resource'),
 	'priority' => 'high',
@@ -147,7 +147,6 @@ $eventdate = new WPAlchemy_MetaBox(array
 	'title' => 'Event Date',
 	'template' => TEMPLATEPATH . '/custom/eventdate_meta.php',
 	'types' => array('resource'),
-	'include_category' => array('Events','Lecture', 'Show', 'Workshop'),
 	'context' => 'side',
 ));
 
@@ -157,7 +156,16 @@ $requirements = new WPAlchemy_MetaBox(array
 	'title' => 'Requirements',
 	'template' => TEMPLATEPATH . '/custom/requirements_meta.php',
 	'types' => array('resource'),
-	'include_category' => array('Events','Lecture', 'Show', 'Workshop'),
+));
+
+$resource_type = new WPAlchemy_MetaBox(array
+(
+	'id' => '_resource_type',
+	'title' => 'Resource Type',
+	'template' => TEMPLATEPATH . '/custom/resource_type_meta.php',
+	'types' => array('resource'),
+	'priority' => 'high',
+	'context' => 'side',
 ));
 
 

@@ -1,5 +1,6 @@
 /* @override 
 	http://games.ucla.edu/wp-content/themes/UCLAGL/style.css
+	http://149.142.120.35/wp-content/themes/UCLAGL/style.css
 */
 
 /*
@@ -275,30 +276,31 @@ nav#header_nav>ul li a>section.link_text{
 
 	background-color: #000;
 	padding: 67px 27px 27px;
-	margin-top: 16px;
+	margin-top: 4px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border: 3px solid #adadad;
 }
 
 
-#post_main>article>header{
+#post_main article header{
 	color: #fffeff;
 	width: 1059px;
 	font: 12px "Courier New", Courier, mono;
 	height: 72px;
-	background: url(images/header_ribbon.png) no-repeat right bottom;
-	margin-bottom: 19px;
+	background: url(images/header_ribbon.png) no-repeat -1px 33px;
+	margin-bottom: -7px;
 	padding-top: 0;
-	margin-top: 8px;
+	margin-top: -17px;
 	display: inline-block;
 	z-index: 1;
+	padding-bottom: 42px;
 	margin-left: -79px;
 }
 
 
 
-#post_main>article>header>h1{
+#post_main article header h1{
 	text-align: center;
 	width: 953px;
 	background: #d0d0d0;
@@ -352,16 +354,17 @@ section#game_meta article{
 
 
 
-
+div#opening_image{
+}
 
 div#opening_image img{
-	height: auto;
 	width: 954px;
 	padding: 0;
 	background-color: #d0d0d0;
 	margin-right: auto;
 	margin-left: -27px;
-	margin-top: -77px;
+	margin-top: -95px;
+	height: auto;
 }
 
 div.wpa_group-credits{
