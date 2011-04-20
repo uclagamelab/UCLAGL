@@ -75,16 +75,16 @@ $(document).ready(function() {
 	});
 
 	
-	$("#nav2>a").click(function (e) { 
-		$('#coming_soon').css('top', e.pageY);
-		$('#coming_soon').css('left', e.pageX);
-		$('#coming_soon').css('opacity', 100);
-		$('#coming_soon').animate({ 
-		    opacity: 0,
-			top:-300,
-		  }, 'slow', 'easeInQuart' );
-			
-	});
+	// $("#nav2>a").click(function (e) { 
+	// 	$('#coming_soon').css('top', e.pageY);
+	// 	$('#coming_soon').css('left', e.pageX);
+	// 	$('#coming_soon').css('opacity', 100);
+	// 	$('#coming_soon').animate({ 
+	// 	    opacity: 0,
+	// 		top:-300,
+	// 	  }, 'slow', 'easeInQuart' );
+	// 		
+	// });
 	
 	
 
