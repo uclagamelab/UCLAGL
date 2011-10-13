@@ -50,7 +50,7 @@ Template Name: Main Page
 			
 			<?php 
 				$args = array( 
-					'post_type' => 'game', 
+					'post_type' => array('game','resource'),  
 					'tag' => 'current-projects',
 					'posts_per_page' => 3,
 					//use tag__not_in to handle posts that are tagged slider and feature
