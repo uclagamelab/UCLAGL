@@ -9,7 +9,7 @@ Template Name: Main Page
 			<section class="anythingSlider">
 				<?php
 				$args = array( 
-					'post_type' => 'game', 
+					'post_type' => array('game','resource'), 
 					'tag' => 'slider',
 					//use tag__not_in to handle posts that are tagged slider and feature
 					//slider cat id is 33
