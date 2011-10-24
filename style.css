@@ -1,5 +1,6 @@
 /* @override 
 	http://games.ucla.edu/wp-content/themes/UCLAGL/style.css
+	http://149.142.120.35/wp-content/themes/UCLAGL/style.css
 */
 
 /*
@@ -93,7 +94,7 @@ section#game_caption p{
 /* @group LINKS */
 
 a:link, a:visited {
-	text-decoration: none;
+	text-decoration: underline;
 	border-style: none;
 	border-width: 0;
 	color: #fff;
@@ -101,11 +102,15 @@ a:link, a:visited {
 }
 
 a:hover, a:active {
-	text-decoration: none;
+	text-decoration: underline;
 	border-style: none;
 	border-width: 0;
-	color: #000;
+	color: #e52323;
 
+}
+
+a.kbrsswidget {
+	
 }
 
 /* @end */
@@ -742,18 +747,19 @@ section#background_bottom {
 	background: url(images/background_bottom.gif) no-repeat center top;
 }
 
-#post_main a{
-	background-color: #969696;
+/*#post_main a{
+	/*background-color: #969696;*!/
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
 	padding: 1px;
-}
+	text-decoration: underline;
+}*/
 
-#post_main a:hover, #post_main a:visited, #post_main a:active{
+/*#post_main a:hover, #post_main a:visited, #post_main a:active{
 	background-color: #000;
 	color: #fffeff;
-}
+}*/
 
 #post_main img, #post_main iframe{
 	padding: 3px;
@@ -1926,7 +1932,7 @@ li{
 
 
 
-/* WordPress Required Styles */
+/* @group WordPress Required Styles */
 .aligncenter {
 	display: block;
 	margin-left: auto;
@@ -1974,4 +1980,17 @@ li{
 .sticky h2 {
 	padding-top: 10px;
 }
+/* @end */
+
+/* @group footnotes */
+
+ol.footnotes {
+}
+
+ol.footnotes li {
+	font-size: 12px;
+}
+
+
+/* @end */
 

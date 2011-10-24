@@ -280,7 +280,7 @@ function create_resource_type() {
 	$labels = array(
 		'name' => _x('Resources', 'post type general name'),
 		'singular_name' => _x('Resource', 'post type singular name'),
-		'add_new' => _x('Add Resource', 'game'),
+		'add_new' => _x('Add Resource', 'resource'),
 		'add_new_item' => __('Add New Resource'),
 		'edit_item' => __('Edit Resource'),
 		'new_item' => __('New Resource'),
