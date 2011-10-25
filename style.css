@@ -236,7 +236,7 @@ nav#header_nav>ul li a>section.link_text{
 	position: relative;
 	z-index: 1;
 	background: url(images/about.png) no-repeat;
-	top: -20px;
+	top: -18px;
 }
 
 
@@ -245,7 +245,7 @@ nav#header_nav>ul li a>section.link_text{
 	height: 200px;
 	position: relative;
 	z-index: 1;
-	top: -20px;
+	top: -18px;
 	background: url(images/games.png) no-repeat;
 }
 
@@ -254,7 +254,7 @@ nav#header_nav>ul li a>section.link_text{
 	height: 200px;
 	position: relative;
 	z-index: 1;
-	top: -20px;
+	top: -18px;
 	background: url(images/resources.png) no-repeat;
 }
 
@@ -263,7 +263,7 @@ nav#header_nav>ul li a>section.link_text{
 	height: 200px;
 	position: relative;
 	z-index: 1;
-	top: -20px;
+	top: -18px;
 	background: url(images/contact.png) no-repeat;
 }
 
@@ -272,7 +272,7 @@ nav#header_nav>ul li a>section.link_text{
 	height: 200px;
 	position: relative;
 	z-index: 1;
-	top: -20px;
+	top: -18px;
 	background: url(images/blog.png) no-repeat;
 }
 /* @end */

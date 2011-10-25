@@ -13,47 +13,10 @@ Template Name: Resources Page
 			<section id="feature_spots">
 			
 			<?php 
-				$args = array( 
-					'post_type' => 'resource', 
-					'tag' => 'current-projects',
-					//use tag__not_in to handle posts that are tagged slider and feature
-					//slider cat id is 33
-					//'tag__not_in' => array(33),
-				);
-				$loop = new WP_Query($args);
-				$count = 1;
-	 			while ( $loop->have_posts() ) : $loop->the_post(); 
-				if($count%3==0){ ?>
-				<article class="featured_article last">
-				<?php } else { ?>
-				<article class="featured_article">
-				<?php } ?>
-					<a href="<?php the_permalink() ?>">
-						<?php the_post_thumbnail('featured');  ?>
-					</a>
-					<div class="featured_article_text">
-						<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
-							<?php the_title( '<h3>', '</h3>' ); ?>
-						</a>
-						<p>
-
-							<?php 
-								$short_description->the_field('description'); 
-								$short_description->the_value();
-							?>
-						</p>
-					</div>
-				</article>
-			<?php 
-			$count ++;
-			endwhile; 				
+			$count = 1;
 			$args = array( 
 				'post_type' => 'resource', 
-				//'posts_per_page' => 6,
-				//'tag' => 'current-projects',
-				//use tag__not_in to handle posts that are tagged slider and feature
-				//slider cat id is 33
-				'tag__not_in' => array(32),
+				'category_name' => 'events'
 			);
 			$loop = new WP_Query($args); 
 			while ( $loop->have_posts() ) : $loop->the_post(); 	

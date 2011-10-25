@@ -52,16 +52,16 @@ $(document).ready(function() {
 	$("li.main_nav>a").each(function(){
 		if( $(this).parent('li').hasClass('current-menu-item') )
 		{
-			$(this).css('top', '-2px');
+			$(this).css('top', '0px');
 		}
 
 		else
 		{
 			$(this).hover(function() {
 
-			    $(this).stop().animate({'top':'5px'},'slow','easeOutBounce');
+			    $(this).stop().animate({'top':'0px'},'slow','easeOutBounce');
 			    }, function () {
-			    $(this).stop().animate({'top':'-20px'}, 'fast')
+			    $(this).stop().animate({'top':'-18px'}, 'fast')
 			});
 		}
 	});
