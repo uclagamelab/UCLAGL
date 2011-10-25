@@ -224,47 +224,56 @@ nav#header_nav>ul li a:link, nav#header_nav>ul li a:visited {
 
 nav#header_nav>ul li a>section.link_text{
 	font-family: FFFCorporateRegular, "Courier New", Courier, mono;
-	margin-top: 62px;
+/*	margin-top: 47px;*/
 	text-align: center;
 	position: relative;
-	top: 62px;
+	top: 110px;
 }
 
 #nav0>a {
-	width: 137px;
+	width: 106px;
 	height: 200px;
 	position: relative;
 	z-index: 1;
 	background: url(images/about.png) no-repeat;
-	top: -37px;
+	top: -20px;
 }
 
 
 #nav1>a {
-	width: 137px;
+	width: 106px;
 	height: 200px;
 	position: relative;
 	z-index: 1;
-	top: -37px;
-	background: url(images/projects.png) no-repeat;
+	top: -20px;
+	background: url(images/games.png) no-repeat;
 }
 
 #nav2>a {
-	width: 137px;
+	width: 106px;
 	height: 200px;
 	position: relative;
 	z-index: 1;
-	top: -37px;
+	top: -20px;
 	background: url(images/resources.png) no-repeat;
 }
 
 #nav3>a {
-	width: 137px;
+	width: 106px;
 	height: 200px;
 	position: relative;
 	z-index: 1;
-	top: -37px;
+	top: -20px;
 	background: url(images/contact.png) no-repeat;
+}
+
+#nav4>a {
+	width: 106px;
+	height: 200px;
+	position: relative;
+	z-index: 1;
+	top: -20px;
+	background: url(images/blog.png) no-repeat;
 }
 /* @end */
 
@@ -526,7 +535,7 @@ hr{
 .start-stop {
 	z-index: 10;
 	background: green;
-	background-image: url(images/cellshade.png);
+/*	background-image: url(images/cellshade.png);*/
 	background-repeat: repeat-x;
 	color: white;
 	padding: 2px 5px;
@@ -1887,7 +1896,7 @@ li{
 	padding-bottom:10px;}	
 
 .button, .button:visited {
-	background: #222 url(overlay.png) repeat-x; 
+/*	background: #222 url(overlay.png) repeat-x; */
 	display: inline-block; 
 	padding: 5px 10px 6px; 
 	color: #fff; 
