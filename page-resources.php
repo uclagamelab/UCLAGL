@@ -16,15 +16,15 @@ Template Name: Resources Page
 			$count = 1;
 			$args = array( 
 				'post_type' => 'resource', 
-				'category_name' => 'events'
+				// 'category_name' => 'events'
 			);
 			$loop = new WP_Query($args); 
 			while ( $loop->have_posts() ) : $loop->the_post(); 	
 			?>
 				<?php if($count%3==0){ ?>
-				<article class="featured_article last">
+				<article <?php post_class('featured_article last'); ?> >
 				<?php }else{ ?>
-				<article class="featured_article">
+				<article  <?php post_class('featured_article'); ?> >
 				<?php } ?>
 					<a href="<?php the_permalink() ?>">
 						<?php the_post_thumbnail('featured');  ?>
