@@ -62,7 +62,7 @@
 			</section><!-- contact_form -->
 
 			<nav id="header_nav">
-				<?php wp_nav_menu(array('theme_location' => 'main-nav','container'=>'false','container_class' => 'main-nav','link_before'=>'<section class="link_text">', 'link_after' => '</section><section class="background"></section>')); ?>
+				<?php wp_nav_menu(array('theme_location' => 'main-nav','container'=>'false','container_class' => 'main-nav','link_before'=>'<div class="link_text">', 'link_after' => '</div><div class="background"></div>')); ?>
 			</nav>
 		</header>
 

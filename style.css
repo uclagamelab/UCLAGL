@@ -222,7 +222,7 @@ nav#header_nav>ul li a:link, nav#header_nav>ul li a:visited {
 	text-decoration: none;
 }
 
-nav#header_nav>ul li a>section.link_text{
+nav#header_nav>ul li a>div.link_text{
 	font-family: FFFCorporateRegular, "Courier New", Courier, mono;
 /*	margin-top: 47px;*/
 	text-align: center;
