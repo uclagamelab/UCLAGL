@@ -201,10 +201,8 @@ nav#header_nav>ul {
 	padding: 0;
 }
 
-nav#header_nav>ul li {
+nav#header_nav>ul>li {
 	display: inline;
-	width: 130px;
-	height: 128px;
 	text-transform:uppercase;
 	outline: none;
 	
@@ -275,6 +273,30 @@ nav#header_nav>ul li a>div.link_text{
 	top: -18px;
 	background: url(images/blog.png) no-repeat;
 }
+
+
+.current_page_item>ul{
+	width: 0;
+	position: absolute;
+	top: 130px;
+	left: 540px;
+	
+}
+.current_page_item ul li{
+	background-color: #e91717;
+	height: 20px;
+	margin: 0;
+	border: 1px solid #586adc;
+	float: left;
+	text-align: center;
+	width: 90px;
+	font-size: 12px;
+	padding: 5px 2px;
+}
+.current_page_item ul li.all{
+	padding-top: 28px;
+}
+
 /* @end */
 
 /* @group BODY */

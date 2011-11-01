@@ -62,7 +62,6 @@
 			<article id="random_project_grid_bottom"></article>
 		</footer>
 		<?php wp_footer(); ?>
-		<?php get_template_part('sign-up'); ?> 
 		<div id="coming_soon"></div>
 	</body>
 </html>

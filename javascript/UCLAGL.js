@@ -5,6 +5,16 @@ document.createElement('article');
 document.createElement('aside');
 document.createElement('nav');
 
+Array.prototype.unique = function() {
+    var o = {},
+    i,
+    l = this.length,
+    r = [];
+    for (i = 0; i < l; i += 1) o[this[i]] = this[i];
+    for (i in o) r.push(o[i]);
+    return r;
+};
+
 var testVar = null;
 
 function custommsg() 
@@ -36,10 +46,21 @@ $(document).ready(function() {
 	});
 	
 	//this is to get the category names from all the articles on the page
+	var subcats = [];
 	$('article[class*="category"]').each(function(index){
-		//need to filter these results for the class names that contain category in them
-		console.log(index + ': ' + $(this).attr('class'));
+		var allClasses = $(this).attr('class').split(' ');
+		
+		for(var i = 0; i<allClasses.length; i++)
+		{
+			var matches = /^category\-(.+)/.exec(allClasses[i]);
+			if(matches != null) subcats.push(matches[1]);
+			
+		}
 	});
+	subcats = subcats.unique();
+	//console.log(subcats);
+	
+
 	
 	$("li.main_nav>a").each(function(){
 
@@ -61,13 +82,16 @@ $(document).ready(function() {
 		if( $(this).parent('li').is('.menu-item-994') && $(this).parent('li').hasClass('current-menu-item') )
 		{
 			
-			testVar = $(this);
-			$(this).append("<ul class='subnav'></ul>");
-			console.log($(this).children('.subnav').append(navItems));
-
-			
+			$(this).parent('li').append("<ul class='subnav'></ul>");
+			$('.subnav').append('<li class="all">all</li>');
+			for(var i = 0; i<subcats.length; i++)
+			{
+				$('.subnav').append('<li class="'+subcats[i]+'" >'+subcats[i]+'</li>');
+			}
 		}
 	});
+	
+	//do a function on click to hide all the featured items matching the class corresponding to the link
 	
 	
 	
