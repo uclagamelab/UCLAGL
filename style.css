@@ -230,7 +230,7 @@ nav#header_nav>ul li a>div.link_text{
 
 #nav0>a {
 	width: 106px;
-	height: 200px;
+	height: 170px;
 	position: relative;
 	z-index: 1;
 	background: url(images/about.png) no-repeat;
@@ -240,16 +240,17 @@ nav#header_nav>ul li a>div.link_text{
 
 #nav1>a {
 	width: 106px;
-	height: 200px;
+	height: 170px;
 	position: relative;
 	z-index: 1;
 	top: -18px;
 	background: url(images/games.png) no-repeat;
 }
 
+
 #nav2>a {
 	width: 106px;
-	height: 200px;
+	height: 170px;
 	position: relative;
 	z-index: 1;
 	top: -18px;
@@ -258,7 +259,7 @@ nav#header_nav>ul li a>div.link_text{
 
 #nav3>a {
 	width: 106px;
-	height: 200px;
+	height: 170px;
 	position: relative;
 	z-index: 1;
 	top: -18px;
@@ -267,7 +268,7 @@ nav#header_nav>ul li a>div.link_text{
 
 #nav4>a {
 	width: 106px;
-	height: 200px;
+	height: 170px;
 	position: relative;
 	z-index: 1;
 	top: -18px;
@@ -275,27 +276,64 @@ nav#header_nav>ul li a>div.link_text{
 }
 
 
+
 .current_page_item>ul{
 	width: 0;
 	position: absolute;
-	top: 130px;
-	left: 540px;
+	margin-top: 0px;
+	display: block;
+	z-index: 0;
+	margin-left: 192px;
 	
 }
+
+
 .current_page_item ul li{
-	background-color: #e91717;
+	
 	height: 20px;
-	margin: 0;
-	border: 1px solid #586adc;
 	float: left;
 	text-align: center;
-	width: 90px;
-	font-size: 12px;
+	width: 88px;
+	height: auto;
 	padding: 5px 2px;
+	margin: 0;
+	border-top: 1px solid #666;
+	font: bold 12px "Courier New", Courier, mono;
+	color: #000000;
+
+	
 }
-.current_page_item ul li.all{
+
+.current_page_item ul li:hover{
+	cursor:pointer;
+}
+/*.current_page_item ul li.all{
 	padding-top: 28px;
+}*/
+
+.current_page_item ul li.background0{
+	background: url(images/subnav0.png) repeat;
 }
+
+.current_page_item ul li.background1{
+	background: url(images/subnav1.png) repeat;
+	opacity: 1;
+}
+
+.current_page_item ul li.background2{
+	background: url(images/subnav2.png) repeat;
+}
+
+.current_page_item ul li.background3{
+	background: url(images/subnav3.png) repeat;
+}
+
+.current_page_item ul li.background4{
+	background: url(images/subnav4.png) repeat;
+	
+}
+
+
 
 /* @end */
 

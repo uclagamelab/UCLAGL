@@ -63,6 +63,17 @@ $(document).ready(function() {
 
 	
 	$("li.main_nav>a").each(function(){
+	
+		if( $(this).parent('li').is('.menu-item-994') && $(this).parent('li').hasClass('current-menu-item') )
+		{
+			
+			$(this).parent('li').append("<ul class='subnav'></ul>");
+			$('.subnav').append('<li class="background4 all">all</li>');
+			for(var i = 0; i<subcats.length; i++)
+			{
+				$('.subnav').append('<li class="background'+(i%5)+' '+subcats[i]+'" >'+subcats[i]+'</li>');
+			}
+		}
 
 		if( $(this).parent('li').hasClass('current-menu-item') )
 		{
@@ -75,21 +86,30 @@ $(document).ready(function() {
 
 			    $(this).stop().animate({'top':'0px'},'slow','easeOutBounce');
 			    }, function () {
-			    $(this).stop().animate({'top':'-18px'}, 'fast')
+			    $(this).stop().animate({'top':'-18px'}, 'fast');
 			});
 		}
 		
-		if( $(this).parent('li').is('.menu-item-994') && $(this).parent('li').hasClass('current-menu-item') )
-		{
-			
-			$(this).parent('li').append("<ul class='subnav'></ul>");
-			$('.subnav').append('<li class="all">all</li>');
-			for(var i = 0; i<subcats.length; i++)
-			{
-				$('.subnav').append('<li class="'+subcats[i]+'" >'+subcats[i]+'</li>');
-			}
-		}
+
 	});
+	
+	$('ul.subnav').hover(function() {
+		console.log($(this).size());
+		$(this).stop().animate({'margin-top':'140px'},'slow');
+		}, function () {
+		$(this).stop().animate({'margin-top':'0px'}, 'slow');
+	});
+	
+	$('ul.subnav li').click(function(){
+		console.log($(this).text());
+		$('ul.subnav').append($(this)).animate({'margin-top':'0px'}, 'fast');
+		$("article.featured_article").show();
+		$("article.featured_article").not('.category-'+$(this).text()).hide();
+		
+		
+	});
+	
+	
 	
 	//do a function on click to hide all the featured items matching the class corresponding to the link
 	
