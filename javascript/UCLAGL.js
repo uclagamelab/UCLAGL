@@ -102,11 +102,13 @@ $(document).ready(function() {
 	
 	$('ul.subnav li').click(function(){
 		console.log($(this).text());
-		$('ul.subnav').append($(this)).animate({'margin-top':'0px'}, 'fast');
+//		$('ul.subnav').append($(this)).animate({'margin-top':'0px'}, 'fast');
+		$('ul.subnav').append($(this));
+		$('ul.subnav').css('margin-top','-20px');
 		$("article.featured_article").show();
-		$("article.featured_article").not('.category-'+$(this).text()).hide();
-		
-		
+		if(!$(this).hasClass('all')){
+			$("article.featured_article").not('.category-'+$(this).text()).hide();
+		}
 	});
 	
 	
