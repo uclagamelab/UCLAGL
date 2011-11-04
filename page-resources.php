@@ -36,7 +36,6 @@ Template Name: Resources Page
 						<p>
 							
 							<?php 
-								echo("##");
 								if ( in_category( 'uncategorized' )) { echo("TRUE");}
 								
 								$short_description->the_field('description'); 

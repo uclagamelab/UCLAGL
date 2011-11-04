@@ -91,11 +91,12 @@ $(document).ready(function() {
 	});
 	
 	$('ul.subnav').hover(function() {
-		$(this).stop().animate({'margin-top':'170px'},'slow');
+		$(this).stop().animate({'margin-top':'160px'},'slow');
 		}, function () {
 		$(this).stop().animate({'margin-top':'-15px'}, 'slow');
 	});
 	
+	var detachedArticles = null;
 	$('ul.subnav li').click(function(){
 		function fixGrid(){
 			$('article.resource').removeClass('last');
@@ -106,7 +107,6 @@ $(document).ready(function() {
 				j++;
 				if(j%3 == 0)
 				{
-					console.log('j: '+j+' articles: '+$(articles).eq(i));
 					$(articles).eq(i).addClass('last');
 				}
 				i++;
@@ -114,11 +114,20 @@ $(document).ready(function() {
 		}
 		$('ul.subnav').append($(this));
 		$('ul.subnav').css('margin-top','-15px');
-		$("article.resource").show();
-		if(!$(this).hasClass('all')){
-			$("article.resource").not('.category-'+$(this).text()).hide('slow',fixGrid);
+		
+		if(detachedArticles)
+		{
+			$('section#feature_spots').prepend(detachedArticles);
+			detachedArticles = null;
 		}
-		else fixGrid();
+		
+		if(!$(this).hasClass('all')){
+			detachedArticles = $("article.resource").not('.category-'+$(this).text()).detach();
+
+			
+		}
+		
+		fixGrid();
 		
 
 	
