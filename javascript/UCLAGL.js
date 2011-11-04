@@ -62,12 +62,12 @@ $(document).ready(function() {
 	
 
 	
-	$("li.main_nav>a").each(function(){
+	$("li.main_nav").each(function(){
 	
-		if( $(this).parent('li').is('.menu-item-994') && $(this).parent('li').hasClass('current-menu-item') )
+		if( $(this).is('.menu-item-994') && $(this).hasClass('current-menu-item') )
 		{
 			
-			$(this).parent('li').append("<ul class='subnav'></ul>");
+			$(this).prepend("<ul class='subnav'></ul>");
 			$('.subnav').append('<li class="background4 all">all</li>');
 			for(var i = 0; i<subcats.length; i++)
 			{
@@ -75,7 +75,7 @@ $(document).ready(function() {
 			}
 		}
 
-		if( $(this).parent('li').hasClass('current-menu-item') )
+		if( $(this).hasClass('current-menu-item') )
 		{
 			$(this).css('top', '0px');
 		}
@@ -94,17 +94,14 @@ $(document).ready(function() {
 	});
 	
 	$('ul.subnav').hover(function() {
-		console.log($(this).size());
-		$(this).stop().animate({'margin-top':'140px'},'slow');
+		$(this).stop().animate({'margin-top':'170px'},'slow');
 		}, function () {
-		$(this).stop().animate({'margin-top':'0px'}, 'slow');
+		$(this).stop().animate({'margin-top':'-10px'}, 'slow');
 	});
 	
 	$('ul.subnav li').click(function(){
-		console.log($(this).text());
-//		$('ul.subnav').append($(this)).animate({'margin-top':'0px'}, 'fast');
 		$('ul.subnav').append($(this));
-		$('ul.subnav').css('margin-top','-20px');
+		$('ul.subnav').css('margin-top','-10px');
 		$("article.featured_article").show();
 		if(!$(this).hasClass('all')){
 			$("article.featured_article").not('.category-'+$(this).text()).hide();

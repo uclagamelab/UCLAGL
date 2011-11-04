@@ -204,15 +204,21 @@ nav#header_nav>ul {
 nav#header_nav>ul>li {
 	display: inline;
 	text-transform:uppercase;
-	outline: none;
-	
-}
-
-nav#header_nav>ul li a {
 	float: left;
 	margin-right: 7px;
 	outline: none;
+	
+	width: 106px;
+	height: 148px;
+	position: relative;
+	z-index: 1;
+	top: -18px;
+	
+}
 
+nav#header_nav>ul li a{
+	height: 126px;
+	display: block;
 }
 
 nav#header_nav>ul li a:link, nav#header_nav>ul li a:visited {
@@ -228,69 +234,51 @@ nav#header_nav>ul li a>div.link_text{
 	top: 110px;
 }
 
-#nav0>a {
-	width: 106px;
-	height: 170px;
-	position: relative;
-	z-index: 1;
+#nav0 {
 	background: url(images/about.png) no-repeat;
-	top: -18px;
 }
 
-
-#nav1>a {
-	width: 106px;
-	height: 170px;
-	position: relative;
-	z-index: 1;
-	top: -18px;
+#nav1 {
 	background: url(images/games.png) no-repeat;
 }
 
-
-
-
-#nav2>a {
-	width: 106px;
-	height: 170px;
-	position: relative;
-	z-index: 1;
-	top: -18px;
+#nav2 a div.background {
+	
 	background: url(images/resources.png) no-repeat;
+	height: 170px;
+	z-index: 0;
+	display: block;
+	position: relative;
+	margin-top: -22px;
 }
 
-#nav3>a {
-	width: 106px;
-	height: 170px;
+#nav2 a div.link_text{
+	display: block;
 	position: relative;
 	z-index: 1;
-	top: -18px;
+}
+
+#nav3 {
 	background: url(images/contact.png) no-repeat;
 }
 
-#nav4>a {
-	width: 106px;
-	height: 170px;
-	position: relative;
-	z-index: 1;
-	top: -18px;
+#nav4 {
 	background: url(images/blog.png) no-repeat;
 }
 
 
 
-.current_page_item>ul{
+ul.subnav{
 	width: 0;
 	position: absolute;
-	margin-top: 0px;
 	display: block;
 	z-index: 0;
-	margin-left: 192px;
-	
+	margin-left: -33px;
+	margin-top: -10px;
 }
 
 
-.current_page_item ul li{
+ul.subnav li{
 	
 	height: 20px;
 	float: left;
@@ -306,31 +294,31 @@ nav#header_nav>ul li a>div.link_text{
 	
 }
 
-.current_page_item ul li:hover{
+ul.subnav li:hover{
 	cursor:pointer;
 }
 /*.current_page_item ul li.all{
 	padding-top: 28px;
 }*/
 
-.current_page_item ul li.background0{
+ul.subnav li.background0{
 	background: url(images/subnav0.png) repeat;
 }
 
-.current_page_item ul li.background1{
+ul.subnav li.background1{
 	background: url(images/subnav1.png) repeat;
 	opacity: 1;
 }
 
-.current_page_item ul li.background2{
+ul.subnav li.background2{
 	background: url(images/subnav2.png) repeat;
 }
 
-.current_page_item ul li.background3{
+ul.subnav li.background3{
 	background: url(images/subnav3.png) repeat;
 }
 
-.current_page_item ul li.background4{
+ul.subnav li.background4{
 	background: url(images/subnav4.png) repeat;
 	
 }
