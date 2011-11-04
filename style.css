@@ -209,7 +209,7 @@ nav#header_nav>ul>li {
 	outline: none;
 	
 	width: 106px;
-	height: 148px;
+	height: 150px;
 	position: relative;
 	z-index: 1;
 	top: -18px;
@@ -231,7 +231,7 @@ nav#header_nav>ul li a>div.link_text{
 /*	margin-top: 47px;*/
 	text-align: center;
 	position: relative;
-	top: 110px;
+	top: 105px;
 }
 
 #nav0 {
@@ -274,7 +274,7 @@ ul.subnav{
 	display: block;
 	z-index: 0;
 	margin-left: -33px;
-	margin-top: -10px;
+	margin-top: -15px;
 }
 
 
@@ -300,6 +300,11 @@ ul.subnav li:hover{
 /*.current_page_item ul li.all{
 	padding-top: 28px;
 }*/
+
+ul.subnav li.cap{
+	height: 25px;
+	margin-top: -35px;
+}
 
 ul.subnav li.background0{
 	background: url(images/subnav0.png) repeat;

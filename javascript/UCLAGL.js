@@ -30,11 +30,6 @@ function isValidEmail(f)
 	   return (str.indexOf(".") > 2) && (str.indexOf("@") > 0);
 }
 
-function addSubnav(v) 
-{
-	v.add('<nav></nav>');
-}
-
 $(document).ready(function() {
 	
 //  nav stuff
@@ -58,9 +53,7 @@ $(document).ready(function() {
 		}
 	});
 	subcats = subcats.unique();
-	//console.log(subcats);
 	
-
 	
 	$("li.main_nav").each(function(){
 	
@@ -68,11 +61,15 @@ $(document).ready(function() {
 		{
 			
 			$(this).prepend("<ul class='subnav'></ul>");
-			$('.subnav').append('<li class="background4 all">all</li>');
+			
+			$('.subnav').append('<li class="background4 cap"></li>');
+			
 			for(var i = 0; i<subcats.length; i++)
 			{
 				$('.subnav').append('<li class="background'+(i%5)+' '+subcats[i]+'" >'+subcats[i]+'</li>');
 			}
+			
+			$('.subnav').append('<li class="background4 all">all</li>');
 		}
 
 		if( $(this).hasClass('current-menu-item') )
@@ -96,23 +93,36 @@ $(document).ready(function() {
 	$('ul.subnav').hover(function() {
 		$(this).stop().animate({'margin-top':'170px'},'slow');
 		}, function () {
-		$(this).stop().animate({'margin-top':'-10px'}, 'slow');
+		$(this).stop().animate({'margin-top':'-15px'}, 'slow');
 	});
 	
 	$('ul.subnav li').click(function(){
-		$('ul.subnav').append($(this));
-		$('ul.subnav').css('margin-top','-10px');
-		$("article.featured_article").show();
-		if(!$(this).hasClass('all')){
-			$("article.featured_article").not('.category-'+$(this).text()).hide();
+		function fixGrid(){
+			$('article.resource').removeClass('last');
+			var articles = $('article.resource:visible');
+			var i = 0;
+			var j = 0;
+			while(i < articles.length){
+				j++;
+				if(j%3 == 0)
+				{
+					console.log('j: '+j+' articles: '+$(articles).eq(i));
+					$(articles).eq(i).addClass('last');
+				}
+				i++;
+			}
 		}
+		$('ul.subnav').append($(this));
+		$('ul.subnav').css('margin-top','-15px');
+		$("article.resource").show();
+		if(!$(this).hasClass('all')){
+			$("article.resource").not('.category-'+$(this).text()).hide('slow',fixGrid);
+		}
+		else fixGrid();
+		
+
+	
 	});
-	
-	
-	
-	//do a function on click to hide all the featured items matching the class corresponding to the link
-	
-	
 	
 
 	$('#menu-custom-main-nav-1 li a span.separator:first').remove();
