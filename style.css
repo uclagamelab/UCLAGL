@@ -50,7 +50,11 @@ html {
 
 body {
 	width: 100%;
-	background: url(images/background.gif) repeat-y center top;
+	background-image: url(images/animal_background.png), url(images/background.gif);
+	background-position: center top, center top;
+	background-repeat: no-repeat, repeat-y;
+	
+/*	background: url(images/background.gif) repeat-y center top;*/
 	display: table;
 	padding: 0;
 	margin-left: auto;
@@ -62,9 +66,11 @@ section#main_section{
 	width: 960px;
 	margin-right: auto;
 	margin-left: auto;
-	background: url(images/animal_background.gif) no-repeat 6px 0;
-	padding: 110px 193px 44px 196px;
+/*	background: url(images/animal_background.gif) no-repeat 6px 0;*/
+	
 	margin-top: -102px;
+	padding-top: 110px;
+	padding-bottom: 44px;
 }
 
 section#game_caption{

@@ -123,8 +123,6 @@ $(document).ready(function() {
 		
 		if(!$(this).hasClass('all')){
 			detachedArticles = $("article.resource").not('.category-'+$(this).text()).detach();
-
-			
 		}
 		
 		fixGrid();
@@ -193,11 +191,7 @@ $(document).ready(function() {
 //	end news section
 	
 // responsive layout
-	if(screen.width < 1290){
-		$('section#main_section').css('background', 'none');
-		$('section#main_section').css('padding', '110px 0 44px 0');
-		
-	}
+
 		
 //end responsive layout
 
