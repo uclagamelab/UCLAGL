@@ -39,7 +39,7 @@ h1, h2, h3{
 	font-family: FFFCorporateRegular, "Courier New", Courier, mono;
 	text-transform:uppercase;
 	font-weight: normal;
-	font-style: normal;
+	font-style: normal;   
 }
 
 html {
@@ -814,7 +814,6 @@ article.regular_article div.regular_article_text p {
 section#background_bottom {
 	height: 187px;
 	overflow: hidden;
-	width: 1096px;
 	margin-right: auto;
 	margin-left: auto;
 	padding-left: 5px;

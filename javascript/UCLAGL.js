@@ -184,7 +184,7 @@ $(document).ready(function() {
 		containerheight: '1em'
 	});
 	
-	
+//	this shortens the news feed to fit in the banner
 	$('a.kbrsswidget').each(function(){
 	 $(this).text($(this).html().substring(0,86 )+"..."); 
 	});
