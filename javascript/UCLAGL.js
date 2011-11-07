@@ -188,6 +188,11 @@ $(document).ready(function() {
 	$('a.kbrsswidget').each(function(){
 	 $(this).text($(this).html().substring(0,86 )+"..."); 
 	});
+	
+//	this shortens the slider caption
+	$('.anythingSlider .wrapper ul li div.slider_caption p').each(function(){
+	 $(this).text($(this).html().substring(0,200 )); 
+	});
 //	end news section
 	
 // responsive layout
