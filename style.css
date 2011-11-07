@@ -74,16 +74,16 @@ section#main_section{
 }
 
 section#game_caption{
-	background-color: #d2d2d2;
+	background-color: #ff7928;
 	padding: 10px;
 	color: #000;
-	-moz-border-radius-bottomleft: 20px;
-	-webkit-border-bottom-left-radius: 20px;
-	
+	-moz-border-radius-bottomleft: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	border-bottom-left-radius:10px;
 
-	
-	-moz-border-radius-topright: 20px;
-	-webkit-border-top-right-radius: 20px;
+	-moz-border-radius-topright: 10px;
+	-webkit-border-top-right-radius: 10px;
+	border-top-right-radius: 10px;
 	
 	text-transform:uppercase;
 	width: auto;
@@ -362,39 +362,38 @@ ul.subnav li.background4{
 
 
 #post_main>article>header{
-	color: #fffeff;
-	width: 1059px;
+
+/*	width: 1059px;
 	font: 12px "Courier New", Courier, mono;
-	height: 72px;
 	background: url(images/header_ribbon.png) no-repeat right bottom;
 	margin-bottom: 19px;
 	padding-top: 0;
 	z-index: 1;
 	margin-left: -79px;
 	margin-top: -15px;
-	padding-bottom: 20px;
 	border:none;
-	outline:none;
+	outline:none;*/
 }
 
 
 
 #post_main>article>header>h1{
 	text-align: center;
-	width: 953px;
-	background: #d0d0d0;
+	background: #d0d0d0 url(images/greyHangFlag.gif) repeat-x bottom;
 	color: #000000;
-	margin-left: 49px;
-	border: 3px solid #adadad;
 	font: 36px FFFCorporateRegular, "Courier New", Courier, mono;
-	height: 53px;
-	display: inline-block;
-	position: relative;
-	top: -36px;
+	margin-top: -10px;
+	width: 954px;
+	margin-left: -30px;
 	z-index: 1;
-	padding-top: 4px;
-	
-}
+	display: inline-block;
+	border-top: 3px solid #adadad;
+	border-right: 3px solid #adadad;
+	border-left: 3px solid #adadad;
+	padding-bottom: 24px;
+	margin-bottom: 24px;
+	padding-top: 10px;
+}	
 
 
 
@@ -410,14 +409,25 @@ ul.subnav li.background4{
 
 }
 section#game_meta{
-	background-color: #000;
+/*	background-color: #000;*/
 	display: inline-block;
 	padding: 10px;
 	margin: 0 23px 19px 19px;
-	border: 2px solid #323232;
+/*	border: 2px solid #323232;*/
 	float: left;
 	width: 45%;
 	font-size: 12px;
+	
+	background-color: #565656;
+/*	height: auto;*/
+/*	padding-bottom: 20px;*/
+/*	margin-left: auto;*/
+	border: 2px solid #939393;
+/*	width: 50%;*/
+/*	float: right;*/
+/*	clear: both;*/
+/*	margin-top: 1px;*/
+	
 }
 
 section#game_meta article h3 {
@@ -666,7 +676,7 @@ section#news_feed article{
 
 section#news_feed article#news_feed_content {
 	width: 934px;
-	background: #4e4f4f;
+	background: #ff7928;
 	font: 11px "Courier New", Courier, mono;
 	padding: 10px;
 	border: 1px solid #000;
@@ -697,14 +707,16 @@ section#news_feed ul{
 }
 
 section#news_feed ul li{
-	font: 18px FFFCorporateRegular, "Courier New", Courier, mono;
+	font: 15px FFFCorporateRegular, "Courier New", Courier, mono;
 	list-style-type: none;
 	position: relative;
 	display: inline-block;
 	left: 205px;
 	bottom: 16px;
-	font-size: 15px;
 	text-transform: uppercase;
+}
+section#news_feed ul li a{
+	color: #000;
 }
 
 li.widget{
@@ -1323,7 +1335,7 @@ form.search{
 
 #game_footer_links h3 {
 	text-align: right;
-	color: #000;
+	color:#fdfcfe;;
 	margin-bottom: -3px;
 	margin-right: 16px;
 }
