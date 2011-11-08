@@ -1149,7 +1149,7 @@ div#coming_soon{
 
 /* @end */
 
-/* @group CONTACT FORM */
+/* @group SUBSCRIBE BAR */
 
 section#contact_form {
 	color: #fff;
@@ -1219,6 +1219,188 @@ section#contact_form {
 	display: none;
 }
 
+
+
+/* @end */
+
+/*@group CONTACT FORM*/
+
+form{
+	
+}
+
+form p span{
+	
+}
+
+form p span input{
+	
+}
+
+
+section#contact {
+	background-color: #000;
+	padding: 106px 27px 27px;
+	margin-top: -97px;
+	overflow: hidden;
+	list-style-type: none;
+	display: inline-block;
+}
+section#contact li h2{
+	font-size: 40px;
+	text-align: center;
+}
+
+div.wpcf7{
+	overflow: auto;
+}
+
+
+form.wpcf7-form p{
+	font-family: FFFCorporateRegular, "Courier New", Courier, mono;
+	color: #e1e1e1;
+	font-size: 14px;
+	border-color: #3a3a3a;
+	border-width: 1px;
+	text-transform: uppercase;
+}
+
+
+form.wpcf7-form p span input{
+	height: 24px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	box-shadow:  1px 1px 0px #d2d2d2;
+	width: 900px;
+}
+	
+}
+form.wpcf7-form p span.your-message {
+	display: inline-block;
+	width: 901px;
+	height: 198px;
+	
+}
+form.wpcf7-form p span.your-subject input{
+	width:900px;
+}
+form.wpcf7-form p span.your-message textarea{
+	width: 900px;
+	height: 100%;
+	background: #3a3a3a;
+	color: #e1e1e1;
+	border-color: #3a3a3a;
+	border-width: 1px;
+	box-shadow:  1px 1px 0px #d2d2d2;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	resize:vertical;
+	}
+
+input.wpcf7-text {
+	font-family: FFFCorporateRegular, "Courier New", Courier, mono;
+	background: #3a3a3a;
+	color: #e1e1e1;
+	font-size: 16px;
+	border-color: #3a3a3a;
+	border-width: 1px;
+	
+
+}
+
+
+
+
+form.wpcf7-form p input.wpcf7-submit {
+	color: #000;
+	float: right;
+	width: 42px;
+	padding-top: 1px;
+	height: 24px;
+	background-color: #00aeef;
+	border-color: #00aeef;
+	border-width: 1px;
+	cursor: pointer;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font: 14px FFFCorporateRegular, "Courier New", Courier, mono;
+}
+
+
+
+
+
+
+div.wpcf7-response-output {
+	margin: 2em 0.5em 1em;
+	padding: 0.2em 1em;
+	font: 14px FFFCorporateRegular, "Courier New", Courier, mono;
+}
+
+div.wpcf7-mail-sent-ok {
+	border: 2px solid #398f14;
+}
+
+div.wpcf7-mail-sent-ng {
+	border: 2px solid #ff0000;
+}
+
+div.wpcf7-spam-blocked {
+	border: 2px solid #ffa500;
+}
+
+div.wpcf7-validation-errors {
+	border: 2px solid #f7e700;
+}
+
+span.wpcf7-form-control-wrap {
+	position: relative;
+}
+
+span.wpcf7-not-valid-tip {
+	position: absolute;
+	
+	z-index: 100;
+	border: 1px solid #ff0000;
+	background-color:#ff0000;
+	font-size: 10pt;
+	width: 890px;
+	padding-bottom: 2px;
+	padding-right: 2px;
+	padding-left: 2px;
+	margin-top: -36px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	margin-left: 4px;
+}
+
+span.wpcf7-not-valid-tip-no-ajax {
+	color: #f00;
+	font-size: 10pt;
+	display: block;
+}
+
+span.wpcf7-list-item {
+	margin-left: 0.5em;
+}
+
+.wpcf7-display-none {
+	display: none;
+}
+
+div.wpcf7 img.ajax-loader {
+	border: none;
+	vertical-align: middle;
+	margin-left: 4px;
+}
+
+div.wpcf7 .watermark {
+	color: #888;
+}
 
 
 /* @end */
@@ -1531,74 +1713,6 @@ div.bio_article_text {
 
 
 /* @end */
-
-
-/* @group CONTACT */
-
-
-li#text-3.widget.widget_text {
-	background-color: #000;
-	padding: 106px 27px 27px;
-	margin-top: -97px;
-	overflow: hidden;
-	list-style-type: none;
-	display: inline-block;
-}
-
-
-
-div.textwidget {
-
-}
-form.wpcf7-form p span input{
-	height: 16px;
-}
-form.wpcf7-form p span.your-message {
-	display: inline-block;
-	width: 901px;
-	height: 198px;
-}
-form.wpcf7-form p span.your-subject input{
-	width: 901px;
-}
-form.wpcf7-form p span.your-message textarea{
-	width: 100%;
-	height: 100%;
-	background: #3a3a3a;
-	color: #e1e1e1;
-	border-color: #3a3a3a;
-	border-width: 1px;
-}
-
-input.wpcf7-text {
-	font-family: FFFCorporateRegular, "Courier New", Courier, mono;
-	background: #3a3a3a;
-	color: #e1e1e1;
-	font-size: 9px;
-	border-color: #3a3a3a;
-	border-width: 1px;
-}
-
-
-
-
-form.wpcf7-form p input.wpcf7-submit {
-	font-family: FFFCorporateRegular, "Courier New", Courier, mono;
-	color: #000;
-	float: right;
-	width: 42px;
-	font-size: 14px;
-	padding-top: 1px;
-	height: 20px;
-	background-color: #00aeef;
-	border-color: #00aeef;
-	border-width: 1px;
-	cursor: pointer;
-}
-
-
-/* @end */
-
 
 
 /* @group FRONT PAGE */
