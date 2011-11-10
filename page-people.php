@@ -45,17 +45,16 @@ Template Name: People Page
 					'post_type' => 'person',
 					'tag' => 'active',
 					'order' => 'ASC',
-					//use tag__not_in to handle posts that are tagged slider and feature
-					//slider cat id is 33
-					//'tag__not_in' => array(33),
 				);
 				$loop = new WP_Query($args);
 				$count = 1;
 	 			while ( $loop->have_posts() ) : $loop->the_post(); 
+	 			
+
 				if($count%3==0){ ?>
-				<article class="bio_article last">
+				<article <?php post_class('bio_article last'); ?>>
 				<?php } else { ?>
-				<article class="bio_article">
+				<article <?php post_class('bio_article'); ?>>
 				<?php } ?>
 						<?php the_post_thumbnail('featured');  ?>
 					<div class="bio_article_text">

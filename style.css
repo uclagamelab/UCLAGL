@@ -17,9 +17,6 @@ Tags: minimalist, template, html5
 
 */
 
-/* @group RESET */
-
-/* @end */
 
 /* @group BASICS */
 
@@ -1663,7 +1660,7 @@ div.bio_article_text {
 }
 
 #bio_spots{
-	margin-bottom: 126px;
+/*	margin-bottom: 126px;*/
 }
 
 #bio_spots article.bio_article img{
