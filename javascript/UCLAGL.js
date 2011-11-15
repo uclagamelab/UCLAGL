@@ -53,22 +53,54 @@ $(document).ready(function() {
 		}
 	});
 	subcats = subcats.unique();
+
+	
+	//this is to get the tab names from all the articles on the page
+	var subtags = [];
+	$('article[class*="tag"]').each(function(index){
+		var allClasses = $(this).attr('class').split(' ');
+		
+		for(var i = 0; i<allClasses.length; i++)
+		{
+			var matches = /^tag\-(.+)/.exec(allClasses[i]);
+			if(matches != null) subtags.push(matches[1]);
+			
+		}
+	});
+	subtags = subtags.unique();
+	
+		
+//	subNavList will hold either tags or categories depending on parent menu item
+	var subNavList = null;
+	
+//	subNavMarginTop will adjust the offset of the subnav depending on the number of items in the list
+//	update this to be set relatively instead of hard coded -- see below
+	var subNavMarginTop = 0;
 	
 	
 	$("li.main_nav").each(function(){
 	
-		if( $(this).is('.menu-item-994') && $(this).hasClass('current-menu-item') )
+		if( $(this).hasClass('current-menu-item') && $(this).is('.menu-item-994, .menu-item-1331') )
 		{
 			
+			if($(this).is('.menu-item-994')){
+				subNavList = {'list':subcats, 'type':'category'};
+				subNavMarginTop = -20;
+			}
+			else if($(this).is('.menu-item-1331')){
+				subNavList = {'list':subtags, 'type':'tag'};
+				subNavMarginTop = 105;
+			}
 			$(this).prepend("<ul class='subnav'></ul>");
+			$('ul.subnav').css('margin-top',subNavMarginTop);
 			
 			$('.subnav').append('<li class="background4 cap"></li>');
 			
-			for(var i = 0; i<subcats.length; i++)
+			for(var i = 0; i<subNavList.list.length; i++)
 			{
-				$('.subnav').append('<li class="background'+(i%5)+' '+subcats[i]+'" >'+subcats[i]+'</li>');
+				$('.subnav').append('<li class="background'+(i%5)+' '+subNavList.list[i]+'" >'+subNavList.list[i]+'</li>');
 			}
-			
+
 			$('.subnav').append('<li class="background4 all">all</li>');
 		}
 
@@ -93,14 +125,14 @@ $(document).ready(function() {
 	$('ul.subnav').hover(function() {
 		$(this).stop().animate({'margin-top':'160px'},'slow');
 		}, function () {
-		$(this).stop().animate({'margin-top':'-15px'}, 'slow');
+		$(this).stop().animate({'margin-top':subNavMarginTop}, 'slow');
 	});
 	
 	var detachedArticles = null;
 	$('ul.subnav li').click(function(){
 		function fixGrid(){
 			$('article.resource').removeClass('last');
-			var articles = $('article.resource:visible');
+			var articles = $('article.resource:visible, article.person:visible');
 			var i = 0;
 			var j = 0;
 			while(i < articles.length){
@@ -113,16 +145,17 @@ $(document).ready(function() {
 			}
 		}
 		$('ul.subnav').append($(this));
-		$('ul.subnav').css('margin-top','-15px');
+		$('ul.subnav').css('margin-top',subNavMarginTop);
 		
 		if(detachedArticles)
 		{
-			$('section#feature_spots').prepend(detachedArticles);
+			$('section#feature_spots, section#bio_spots').prepend(detachedArticles);
 			detachedArticles = null;
 		}
 		
 		if(!$(this).hasClass('all')){
-			detachedArticles = $("article.resource").not('.category-'+$(this).text()).detach();
+			detachedArticles = $("article.resource, article.person").not('.'+subNavList.type+'-'+$(this).text()).detach();
+			console.log('.'+subNavList.type+'-'+$(this).text());
 		}
 		
 		fixGrid();

@@ -19,6 +19,7 @@ Tags: minimalist, template, html5
 
 
 /* @group BASICS */
+@import url(http://fonts.googleapis.com/css?family=VT323);
 
 @font-face {
 	font-family: 'FFFCorporateRegular';
@@ -246,11 +247,11 @@ nav#header_nav>ul li a:link, nav#header_nav>ul li a:visited {
 }
 
 nav#header_nav>ul li a>div.link_text{
-	font-family: FFFCorporateRegular, "Courier New", Courier, mono;
-/*	margin-top: 47px;*/
+
+
 	text-align: center;
 	position: relative;
-	top: 105px;
+	top: 100px;
 }
 
 #nav0 a div.background {
@@ -281,7 +282,7 @@ ul.subnav{
 	display: block;
 	z-index: 0;
 	margin-left: -33px;
-	margin-top: -15px;
+/*	margin-top: -15px;*/
 }
 
 

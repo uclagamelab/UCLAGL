@@ -43,7 +43,7 @@ Template Name: People Page
 			<?php 
 				$args = array( 
 					'post_type' => 'person',
-					'tag' => 'active',
+					'tag' => 'active,alumni',
 					'order' => 'ASC',
 				);
 				$loop = new WP_Query($args);
