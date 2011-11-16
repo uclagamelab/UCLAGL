@@ -893,6 +893,8 @@ section>h1 {
 
 /* @end */
 
+
+
 /* @group COMMENTS */
 
 article[id*=comment-] {
@@ -1526,6 +1528,34 @@ form.search{
 }
 
 
+
+/* @end */
+
+/* @group BLOG POSTS */
+
+.category-blog section#main_section h1{
+	background-color: black;
+
+}
+
+.category-blog section#main_section section.grey_plate{
+	padding-bottom: 0px;
+	padding-top: 60px;
+}
+.category-blog section#main_section section.grey_plate h1#blog_header{
+	text-align:center;
+	font-size: 6em;
+}
+
+.category-blog section#main_section article{
+	background-color: black;
+	margin-bottom: 25px;
+	padding-left: 55px;
+	padding-right: 55px;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius: 10px;
+}
 
 /* @end */
 

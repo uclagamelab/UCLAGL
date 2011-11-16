@@ -7,7 +7,7 @@ Template Name: Archives
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<section>
+		<section id="main_section">
 			<article id="post-<?php the_ID(); ?>">
 				<header>
 					<h1><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
@@ -30,7 +30,7 @@ Template Name: Archives
 					<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 				</footer>
 			</article>
-		</section>
+		</section><!--end #main_section-->
 
 	<?php endwhile; else: ?>
 
