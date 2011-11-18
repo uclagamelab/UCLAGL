@@ -380,7 +380,7 @@ ul.subnav li.background4{
 	background: #d0d0d0 url(images/greyHangFlag.gif) repeat-x bottom;
 	color: #000000;
 	font: 36px FFFCorporateRegular, "Courier New", Courier, mono;
-	margin-top: -10px;
+	margin-top: -17px;
 	width: 954px;
 	margin-left: -30px;
 	z-index: 1;
@@ -411,7 +411,6 @@ section#game_meta{
 	display: inline-block;
 	padding: 10px;
 	margin: 0 23px 19px 19px;
-/*	border: 2px solid #323232;*/
 	float: left;
 	width: 45%;
 	font-size: 12px;
@@ -442,16 +441,20 @@ section#game_meta article{
 
 
 
-
+div#opening_image{
+	width: 954px;
+	height: 414px;
+	overflow:hidden;
+	margin-left: -27px;
+	display: inline-block;
+	margin-top: -94px;
+}
 
 div#opening_image img{
+	padding: 0px;
+	width: 100%;
 	height: auto;
-	width: 954px;
-	padding: 0;
-	background-color: #d0d0d0;
-	margin-right: auto;
-	margin-left: -27px;
-	margin-top: -95px;
+
 }
 
 div.wpa_group-credits{
@@ -881,6 +884,7 @@ article[id*=post-] {
 article>header p, 
 article>footer p {
 	font-style: italic;
+	text-align: center;
 }
 
 article+nav {
