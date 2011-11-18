@@ -77,7 +77,7 @@ $(document).ready(function() {
 //	update this to be set relatively instead of hard coded -- see below
 	var subNavMarginTop = 0;
 	
-	
+	var mainNavTop = -2;
 	$("li.main_nav").each(function(){
 	
 		if( $(this).hasClass('current-menu-item') && $(this).is('.menu-item-994, .menu-item-1331') )
@@ -106,14 +106,14 @@ $(document).ready(function() {
 
 		if( $(this).hasClass('current-menu-item') )
 		{
-			$(this).css('top', '0px');
+			$(this).css('top', mainNavTop);
 		}
 
 		else
 		{
 			$(this).hover(function() {
 
-			    $(this).stop().animate({'top':'0px'},'slow','easeOutBounce');
+			    $(this).stop().animate({'top':mainNavTop},'slow','easeOutBounce');
 			    }, function () {
 			    $(this).stop().animate({'top':'-18px'}, 'fast');
 			});
@@ -168,6 +168,13 @@ $(document).ready(function() {
 	$('#menu-custom-main-nav-1 li a span.separator:first').remove();
 	
 //	end nav stuff
+
+
+//extra bit to have nav flag down on single post views
+	if( $('article').hasClass('game') ) $("li.main_nav.menu-item-461").css('top',mainNavTop);
+	else if ($('article').hasClass('resource')) $("li.main_nav.menu-item-994").css('top',mainNavTop);
+	else if ($('article').hasClass('post')) $("li.main_nav.menu-item-1319").css('top',mainNavTop);
+		
 
 //  slider stuff
 
