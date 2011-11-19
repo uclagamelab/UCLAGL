@@ -40,7 +40,7 @@ Template Name: Main Page
 			</section><!-- anythingSlider -->
 			<section id="news_feed">
 				<article id="news_banner_background"><img src="<?php bloginfo('template_directory'); ?>/images/orange_banner.png" /></article>
-				<a class="large button blue" href="http://blog.games.ucla.edu">WE HAVE A BLOG</a>  
+				<a class="large button blue" href="http://games.ucla.edu/category/blog/">WE HAVE A BLOG</a>  
 				<article id="news_feed_content">
 					<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('news') ) : endif; ?> 
 				</article>

@@ -15,12 +15,12 @@
 				</header>
 
 					<section id="game_caption">
-						<p>
+						<h2>
 						<?php 
 							$short_description->the_field('description'); 
 							$short_description->the_value();
 						?>
-						</p>
+						</h2>
 					</section><!-- game_caption -->
 					
 					<?
@@ -28,7 +28,7 @@
 					$my_links = $link_out->the_meta(); 
 					if(sizeof($my_links['out_links']) > 0 || sizeof($my_attachments['docs']) > 0){ 
 					?>
-					<article id="game_footer_links" class="bio_article">
+					<article id="game_footer_links" >
 						<h3>LINKS AND DOWNLOADS</h3>
 						<?	
 							$i=1;

@@ -217,10 +217,10 @@ $(document).ready(function() {
 
 //	news section
 	$('#news').innerfade({
-		animationtype: 'slide',
+		animationtype: 'fade',
 		speed: 200,
 		timeout: 4000,
-		type: 'random',
+		type: 'sequence',
 		containerheight: '1em'
 	});
 	

@@ -41,12 +41,38 @@ Tags: minimalist, template, html5
 
 }
 
+@font-face {
+    font-family: 'DejaVuSansBook';
+    src: url('fonts/DejaVuSans-webfont.eot');
+    src: url('fonts/DejaVuSans-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/DejaVuSans-webfont.woff') format('woff'),
+         url('fonts/DejaVuSans-webfont.ttf') format('truetype'),
+         url('fonts/DejaVuSans-webfont.svg#DejaVuSansBook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'DejaVuSansBold';
+    src: url('fonts/DejaVuSans-Bold-webfont.eot');
+    src: url('fonts/DejaVuSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/DejaVuSans-Bold-webfont.woff') format('woff'),
+         url('fonts/DejaVuSans-Bold-webfont.ttf') format('truetype'),
+         url('fonts/DejaVuSans-Bold-webfont.svg#DejaVuSansBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
 header, footer, section, article, aside, nav {
 	display: block;
 }
 
 h1, h2, h3{
 	font-family: FFFCorporateRegular, "Courier New", Courier, mono;
+	color: #ffffeb;
 	text-transform:uppercase;
 	font-weight: normal;
 	font-style: normal;   
@@ -56,8 +82,15 @@ html {
 	background: #1d1d1d;
 /*	color: #d5d5d5;*/
 	color: #ffffeb;
-	font: 12px/1.8em "DejaVuSansOblique","Courier New", Courier, mono;
+	font: 12px/1.8em "DejaVuSansBook","Courier New", Courier, mono;
 	
+}
+
+::selection {
+        background: #ffb746;
+}
+::-moz-selection {
+        background: #ffb746;
 }
 
 body {
@@ -87,7 +120,6 @@ section#main_section{
 
 section#game_caption{
 	background-color: #ff7928;
-	padding: 10px;
 	color: #000;
 	-moz-border-radius-bottomleft: 10px;
 	-webkit-border-bottom-left-radius: 10px;
@@ -100,22 +132,33 @@ section#game_caption{
 	text-transform:uppercase;
 	width: auto;
 	margin-bottom: 22px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
-section#game_caption p{
+section#game_caption h2{
+	text-align: center;
+	color: #000;
 	font: 14px FFFCorporateRegular, "Courier New", Courier, mono;
 }
 
 
+blockquote{
+	color: #00b1f2;
+}
+
 /* @end */
 
 /* @group LINKS */
+a{
+	
+}
 
 a:link, a:visited {
-	text-decoration: underline;
+	text-decoration: none;
 	border-style: none;
 	border-width: 0;
-	color: #fff;
+	color: #ffb746;
 
 }
 
@@ -123,7 +166,7 @@ a:hover, a:active {
 	text-decoration: underline;
 	border-style: none;
 	border-width: 0;
-	color: #e52323;
+	color: #85858d;
 
 }
 
@@ -365,7 +408,7 @@ ul.subnav li.background4{
 #post_main{
 
 	background-color: #2b2525;
-	padding: 67px 27px 27px;
+	padding: 67px 80px 27px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border: 3px solid #adadad;
@@ -395,7 +438,7 @@ ul.subnav li.background4{
 	color: #000000;
 	font: 36px FFFCorporateRegular, "Courier New", Courier, mono;
 	width: 954px;
-	margin-left: -30px;
+	margin-left: -83px;
 /*	z-index: 1;*/
 	display: inline-block;
 	border-top: 3px solid #adadad;
@@ -413,7 +456,7 @@ ul.subnav li.background4{
 
 
 #post_main>article>section{
-	font-family: "Courier New", Courier, mono;
+	
 	margin-left: auto;
 
 	margin-right: auto;
@@ -422,37 +465,36 @@ ul.subnav li.background4{
 section#game_meta{
 /*	background-color: #000;*/
 	display: inline-block;
-	padding: 10px;
+	padding: 0px;
 	margin: 0 23px 19px 19px;
 	float: left;
 	width: 45%;
 	font-size: 12px;
-	
-	background-color: #565656;
-	border: 2px solid #939393;
+
 
 	
 }
 
 section#game_meta article h3 {
-	color: #fdfcfe;
-	font-size: 13px;
-	margin-bottom: 4px;
-	margin-top: 4px;
-	font-weight: normal;
-	font-style: normal;
+	font: 14px "DejaVuSansBook","Courier New", Courier, mono;
+	color: #d42557;
+
 }
 section#game_meta article{
 	margin-bottom: 12px;
 }
 
+section#game_meta article span.name{
+	font: "DejaVuSansBook","Courier New", Courier, mono;	
+	color: #00b0f1;
+}
 
 
 div#opening_image{
 	width: 954px;
 	height: 414px;
 	overflow:hidden;
-	margin-left: -27px;
+	margin-left: -80px;
 	display: inline-block;
 	margin-top: -98px;
 	padding: 0px;
@@ -721,12 +763,16 @@ section#news_feed ul li{
 	list-style-type: none;
 	position: relative;
 	display: inline-block;
-	left: 205px;
+	left: 217px;
 	bottom: 16px;
 	text-transform: uppercase;
+	width: 755px;
+	text-align: center;
+
 }
 section#news_feed ul li a{
 	color: #000;
+
 }
 
 li.widget{
@@ -753,7 +799,7 @@ li.widget{
 article.featured_article {
 	width: 293px;
 	height: 346px;
-	background-color: #000;
+	background-color: #2b2525;
 	color: #d0d0d0;
 	font: 11px FFFCorporateRegular, "Courier New", Courier, mono;
 	margin-right: 10px;
@@ -793,6 +839,7 @@ article.featured_article div.featured_article_text a:link, article.featured_arti
 
 article.featured_article div.featured_article_text p{
 	font: 11px "Courier New", Courier, mono;
+	color: #ffffeb;
 }
 
 
@@ -1180,8 +1227,7 @@ section#contact_form {
 	position: relative;
 	z-index: 4;
 	top: -156px;
-	margin-left: 2px;
-	right: -283px;
+	right: -281px;
 }
 
 #subscribe_bar span{
@@ -1207,7 +1253,7 @@ section#contact_form {
 	z-index: 3;
 	display: inline-block;
 	top: -69px;
-	right: -60px;
+	right: -61px;
 	position: relative;
 }
 
@@ -1219,7 +1265,7 @@ section#contact_form {
 	display: inline-block;
 	position: relative;
 	top: -69px;
-	right: -53px;
+	right: -56px;
 
 }
 
@@ -1252,7 +1298,7 @@ form p span input{
 
 
 section#contact {
-	background-color: #000;
+	background-color: #2b2525;
 	padding: 106px 27px 27px;
 	margin-top: -97px;
 	overflow: hidden;
@@ -1276,7 +1322,7 @@ div.wpcf7{
 
 form.wpcf7-form p{
 	font-family: FFFCorporateRegular, "Courier New", Courier, mono;
-	color: #e1e1e1;
+	color: #ffffeb;
 	font-size: 14px;
 	border-color: #3a3a3a;
 	border-width: 1px;
@@ -1427,13 +1473,10 @@ div.wpcf7 .watermark {
 
 
 .grey_plate{
-	width: 865px;
-	background-color: #000;
+	width: auto;
+	background-color: #2b2525;
 	text-transform:uppercase;
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
-	border-radius: 15px;
-	border: 3px solid #adadad;
+	border: 10px solid #333;
 	padding: 86px 43px 36px;
 	margin-right: auto;
 	margin-left: auto;
@@ -1512,11 +1555,11 @@ form.search{
 /* @group GAMES */
 
 #game_footer_links {
-	background-color: #565656;
+/*	background-color: #565656;*/
 	height: auto;
 	padding-bottom: 20px;
 	margin-left: auto;
-	border: 2px solid #939393;
+/*	border: 2px solid #939393;*/
 	width: 50%;
 	float: right;
 	clear: both;
@@ -1524,7 +1567,9 @@ form.search{
 }
 
 #game_footer_links div.bio_badge a {
+	
 	padding: 0;
+	text-decoration: none;
 }
 
 
@@ -1534,10 +1579,9 @@ form.search{
 }
 
 #game_footer_links h3 {
-	text-align: right;
-	color:#fdfcfe;;
-	margin-bottom: -3px;
-	margin-right: 16px;
+	font: 14px "DejaVuSansBook","Courier New", Courier, mono;
+	color: #d42557;
+	float: right;
 }
 
 
@@ -1546,28 +1590,31 @@ form.search{
 
 /* @group BLOG POSTS */
 
-.category-blog section#main_section h1{
-	background-color: black;
+.category-blog section#main_section section.grey_plate h1#blog_header{
+	text-align:center;
+	font-size: 6em;
+}
 
+.category-blog section#main_section h1{
+	text-align: center;
 }
 
 .category-blog section#main_section section.grey_plate{
 	padding-bottom: 0px;
 	padding-top: 60px;
 }
-.category-blog section#main_section section.grey_plate h1#blog_header{
-	text-align:center;
-	font-size: 6em;
-}
+
 
 .category-blog section#main_section article{
-	background-color: black;
+	background-color: #2b2525;
 	margin-bottom: 25px;
 	padding-left: 55px;
 	padding-right: 55px;
-	-webkit-border-radius:10px;
-	-moz-border-radius:10px;
-	border-radius: 10px;
+	border: 10px solid #333;
+}
+
+.category-blog section#main_section article footer{
+	background: #333;
 }
 
 /* @end */
@@ -1604,12 +1651,10 @@ article#bio_banner_title {
 
 
 section#main_description {
-	background-color: #dfdfdf;
+	background-color: #2b2525;
 	padding: 17px;
-	color: #1c1c1c;
-	border: 1px solid #000;
 	margin-top: 0;
-	font-size: 14px;
+	
 }
 
 div.bio_badge {
@@ -1624,6 +1669,7 @@ div.bio_badge {
 
 div.bio_badge p{
 	text-transform:uppercase;
+	ffont: 12px "DejaVuSansBook","Courier New", Courier, mono;
 	color: #000;
 	padding-left: 0;
 	margin-left: 22px;
@@ -1632,6 +1678,7 @@ div.bio_badge p{
 	margin-top: 0;
 	padding-top: 5px;
 	padding-right: 17px;
+	line-height: 11px;
 }
 
 div.bio_title {
@@ -1689,17 +1736,18 @@ div.bio_article_text h3 {
 }
 
 article.bio_article {
-	background-color: #000;
+	background-color: #2b2525;
 	overflow: hidden;
 	margin-top: 22px;
 	height: 219px;
+	line-height: 17px;
 }
 
 div.bio_article_text {
 	display: inline-block;
 	float: left;
 	width: 37%;
-	margin: 17px;
+	margin: 2px 17px 17px;
 	font-size: 11px;
 }
 
@@ -1715,12 +1763,12 @@ div.bio_article_text {
 }
 
 #about_intro {
-	background-color: #000;
+	background-color: #2b2525;
 	overflow: hidden;
 	display: inline-block;
 	font-size: 12px;
 	padding: 17px;
-	margin-top: -97px;
+	margin-top: -100px;
 	margin-bottom: 21px;
 }
 #about_intro article#intro_text{
@@ -1736,6 +1784,7 @@ div.bio_article_text {
 	margin-top: 38px;
 	margin-bottom: 0;
 	font-size: 19px;
+	line-height: 1.4em;
 }
 
 #about_intro article#intro_text p {
