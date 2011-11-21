@@ -338,7 +338,7 @@ ul.subnav{
 	position: absolute;
 	display: block;
 	z-index: 0;
-	margin-left: -33px;
+	margin-left: -37px;
 /*	margin-top: -15px;*/
 }
 
@@ -348,15 +348,13 @@ ul.subnav li{
 	height: 20px;
 	float: left;
 	text-align: center;
-	width: 88px;
+	width: 94px;
 	height: auto;
 	padding: 5px 2px;
 	margin: 0;
 	border-top: 1px solid #666;
 	font: bold 12px "Courier New", Courier, mono;
 	color: #000000;
-
-	
 }
 
 ul.subnav li:hover{
@@ -369,6 +367,18 @@ ul.subnav li:hover{
 ul.subnav li.cap{
 	height: 25px;
 	margin-top: -35px;
+}
+
+li.menu-item ul.subnav li.tail{
+	height: 31px;
+}
+
+li.menu-item-994 ul.subnav li.tail{
+	background: url(images/bottomcap3.png) no-repeat -3px bottom;
+}
+
+li.menu-item-1331 ul.subnav li.tail{
+	background: url(images/bottomcap1.png) no-repeat -3px bottom;
 }
 
 ul.subnav li.background0{

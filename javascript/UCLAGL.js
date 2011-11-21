@@ -85,11 +85,11 @@ $(document).ready(function() {
 			
 			if($(this).is('.menu-item-994')){
 				subNavList = {'list':subcats, 'type':'category'};
-				subNavMarginTop = -20;
+				subNavMarginTop = -40;
 			}
 			else if($(this).is('.menu-item-1331')){
 				subNavList = {'list':subtags, 'type':'tag'};
-				subNavMarginTop = 105;
+				subNavMarginTop = 87;
 			}
 			$(this).prepend("<ul class='subnav'></ul>");
 			$('ul.subnav').css('margin-top',subNavMarginTop);
@@ -102,6 +102,10 @@ $(document).ready(function() {
 			}
 
 			$('.subnav').append('<li class="background4 all">all</li>');
+			$('.subnav').append('<li class="tail"></li>');
+//			$('ul.subnav li.tail').css('background', 'url(images/bottomcap2.png) no-repeat -3px bottom')
+
+
 		}
 
 		if( $(this).hasClass('current-menu-item') )
