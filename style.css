@@ -249,11 +249,10 @@ body>header>a span {
 nav#header_nav {
 	width: 558px;
 	padding: 0;
-	margin: -220px 0 0 170px;
-	font-family: FFFCorporateRegular, "Courier New", Courier, mono;
-	font-size: 13px;
+	margin: -6px 0 0 30px;
 	color: #030300;
 	float: left;
+	font: 13px FFFCorporateRegular, "Courier New", Courier, mono;
 }
 
 nav#header_nav>ul {
@@ -607,12 +606,12 @@ hr{
 
 .anythingSlider .forward {
 	background-position: 0 -27px;
-	right: 50px;
+	right: 65px;
 }
 
 .anythingSlider .back {
 	background-position: -102px -27px;
-	left: -552px;
+	left: -567px;
 }
 
 .anythingSlider .forward:hover {
@@ -625,9 +624,10 @@ hr{
 
 .thumbNav {
 	position: relative;
-	top: 352px;
+	top: 402px;
 	text-align: center;
 	z-index: 1;
+	left: -48px;
 }
 /*this is for moving controls*/
 .thumbNav ul{
@@ -1221,67 +1221,77 @@ div#coming_soon{
 
 /* @group SUBSCRIBE BAR */
 
-section#contact_form {
+#social_box {
 	color: #fff;
-	float: right;
 	font-size: 9px;
 	z-index: 3;
-	margin-right: 66px;
+	float: right;
+	position: relative;
+	padding-bottom: 0;
+	width: 206px;
+	margin-right: 14px;
+	height: 20px;
+	margin-top: -2px;
 }
 
 #subscribe_bar{
 	background: url(images/subscribe_bar.png) no-repeat center;
 	width: 210px;
 	height: 56px;
-	display: inline-block;
-	position: relative;
 	z-index: 4;
-	top: -156px;
-	right: -281px;
+	float: left;
+	position: absolute;
 }
 
-#subscribe_bar span{
- display: none;	
-}
+
 
 #subscribe_fb{
 	background: url(images/subscribe_fb.png) no-repeat center;
-	width: 72px;
-	height: 210px;
+	width: 46px;
+	height: 130px;
 	z-index: 3;
+	float: left;
 	display: inline-block;
 	position: relative;
-	top: -69px;
-	right: -66px;
-
 }
 
 #subscribe_tw{
 	background: url(images/subscribe_tw.png) no-repeat center;
-	width: 72px;
-	height: 210px;
+	width: 46px;
+	height: 130px;
 	z-index: 3;
+	float: left;
 	display: inline-block;
-	top: -69px;
-	right: -61px;
 	position: relative;
 }
 
 #subscribe_em{
 	background: url(images/subscribe_em.png) no-repeat center;
-	width: 72px;
-	height: 210px;
+	width: 46px;
+	height: 130px;
 	z-index: 3;
+	float: left;
 	display: inline-block;
 	position: relative;
-	top: -69px;
-	right: -56px;
+}
 
+#subscribe_bl{
+	background: url(images/subscribe_rss.png) no-repeat center;
+	width: 46px;
+	height: 130px;
+	z-index: 3;
+	float: left;
+	display: inline-block;
+	position: relative;
 }
 
 .subscribe{
+	margin-right: 7px;
+	margin-top: 2px;
+}
 
-
+.subscribe.last{
+	margin-right: 0px;
 }
 
 .subscribe span{
@@ -1778,7 +1788,7 @@ div.bio_article_text {
 	display: inline-block;
 	font-size: 12px;
 	padding: 17px;
-	margin-top: -100px;
+	margin-top: -72px;
 	margin-bottom: 21px;
 }
 #about_intro article#intro_text{

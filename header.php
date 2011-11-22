@@ -54,15 +54,19 @@
 				</section>
 				<!-- <span><?php bloginfo('name'); ?></span> -->
 			</a>
-			<section id="contact_form">
-				<div id="subscribe_bar"><span>Subscribe to our feeds</span></div><!-- subscribe_bar -->
-				<a href="http://www.facebook.com/pages/UCLA-Game-Lab/150951808280719" title="Friend us on Facebook"><div id="subscribe_fb" class="subscribe"><span>Friend us on Facebook</span></div></a><!-- subscribe_fb -->
-				<a href="http://twitter.com/uclagames" title="Follow us on Twitter"><div id="subscribe_tw" class="subscribe"><span>Follow us on Twitter</span></div></a><!-- subscribe_tw -->
-				<a href="http://eepurl.com/cG3WU" title="Subscribe to our mailing list"><div id="subscribe_em" class="subscribe"><span>Subscribe to our mailing list</span></div></a><!-- subscribe_em -->
-			</section><!-- contact_form -->
+
 
 			<nav id="header_nav">
 				<?php wp_nav_menu(array('theme_location' => 'main-nav','container'=>'false','container_class' => 'main-nav','link_before'=>'<div class="link_text">', 'link_after' => '</div><div class="background"></div>')); ?>
 			</nav>
+			<section id="social_box">
+				<div id="subscribe_bar"></div><!-- subscribe_bar -->
+				<a href="http://www.facebook.com/pages/UCLA-Game-Lab/150951808280719" title="Friend us on Facebook"><div id="subscribe_fb" class="subscribe"><span>Friend us on Facebook</span></div></a><!-- subscribe_fb -->
+				<a href="http://twitter.com/uclagames" title="Follow us on Twitter"><div id="subscribe_tw" class="subscribe"><span>Follow us on Twitter</span></div></a><!-- subscribe_tw -->
+				<a href="http://eepurl.com/cG3WU" title="Subscribe to our mailing list"><div id="subscribe_em" class="subscribe"><span>Subscribe to our mailing list</span></div></a><!-- subscribe_em -->
+				<a href="http://games.ucla.edu/category/blog" title="Subscribe to our blog"><div id="subscribe_bl" class="subscribe last"><span>Subscribe to our blog</span></div></a><!-- subscribe_em -->
+			</section><!-- social_box -->
 		</header>
+		
+
 

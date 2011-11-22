@@ -204,9 +204,9 @@ $(document).ready(function() {
 	
 	$(".subscribe").each(function(){
 		$(this).hover(function(){
-			$(this).stop().animate({'top':'-30px'}, 'slow', 'easeOutBounce');
+			$(this).stop().animate({'margin-top':'30px'}, 'slow', 'easeOutBounce');
 		}, function(){
-			$(this).stop().animate({'top':'-69px'}, 'fast')
+			$(this).stop().animate({'margin-top':'2px'}, 'fast')
 		});
 	});
 
