@@ -1633,8 +1633,24 @@ form.search{
 	border: 10px solid #333;
 }
 
+.category-blog section#main_section article section img{
+	float: left;
+	width: 150px;
+	height: auto;
+	margin-right: 32px;
+	margin-top: -62px;
+	padding: 0px;
+	border: 8px solid #333;
+	
+}
+
+.category-blog section#main_section article section p{
+	margin-bottom: 21px;
+}
+
 .category-blog section#main_section article footer{
 	background: #333;
+	
 }
 
 /* @end */

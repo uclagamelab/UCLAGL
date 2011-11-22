@@ -14,8 +14,9 @@
 					<p>Posted on <?php the_time('F jS, Y'); ?> by <?php the_author(); ?></p>
 				</header>
 				<section>
+					<?php the_post_thumbnail('featured');  ?>
 					<?php the_excerpt(); ?>
-
+					
 				</section>
 				<footer>
 					<p><?php the_tags('Tags: ', ', ', '<br>'); ?> Posted in <?php the_category(', '); ?> </p>
