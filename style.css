@@ -1683,16 +1683,17 @@ article#bio_banner_title {
 	position: relative;
 	top: 64px;
 	right: 36px;
+	
 }
 
 
 
 
-section#main_description {
+section#main_description, #about_map {
 	background-color: #2b2525;
 	padding: 17px;
 	margin-top: 0;
-	
+	margin-bottom: 40px;
 }
 
 div.bio_badge {
