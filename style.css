@@ -2105,7 +2105,7 @@ a.kbrsswidget {
 	font: "DejaVuSansBook","Courier New", Courier, mono;
 	padding-left: 3px;
 	padding-right: 3px;
-	color: #3030ed;
+	color: #000;
 	font-size: 20px;
 	text-transform: uppercase;
 }
@@ -2115,8 +2115,8 @@ a.kbrsswidget:hover{
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
-	border: 1px solid #0d0da6;
-	background-color: #3030ed;
+	border: 1px solid #7b7373;
+	background-color: #8e5d1f;
 	text-decoration: none;
 }
 
