@@ -84,17 +84,11 @@ $(document).ready(function() {
 	
 		if( $(this).hasClass('current-menu-item') && $(this).is('.menu-item-994, .menu-item-1331') )
 		{
-			
-			if($(this).is('.menu-item-994')){
-				subNavList = {'list':subcats, 'type':'category'};
-				subNavMarginTop = -40;
-			}
-			else if($(this).is('.menu-item-1331')){
-				subNavList = {'list':subtags, 'type':'tag'};
-				subNavMarginTop = 87;
-			}
+			if($(this).is('.menu-item-994')) subNavList = {'list':subcats, 'type':'category'};
+			else if($(this).is('.menu-item-1331')) subNavList = {'list':subtags, 'type':'tag'};
+
 			$(this).prepend("<ul class='subnav'></ul>");
-			$('ul.subnav').css('margin-top',subNavMarginTop);
+
 			
 			$('.subnav').append('<li class="background4 cap"></li>');
 			
@@ -105,8 +99,12 @@ $(document).ready(function() {
 
 			$('.subnav').append('<li class="background4 all">all</li>');
 			$('.subnav').append('<li class="tail"></li>');
+			
+			
+			if($(this).is('.menu-item-994')) subNavMarginTop = $('ul.subnav').height() - 285;
+			else if($(this).is('.menu-item-1331')) subNavMarginTop = $('ul.subnav').height() - 33;
 
-
+			$('ul.subnav').css('top',subNavMarginTop);
 		}
 
 		if( $(this).hasClass('current-menu-item') )
@@ -128,9 +126,9 @@ $(document).ready(function() {
 	});
 	
 	$('ul.subnav').hover(function() {
-		$(this).stop().animate({'margin-top':'160px'},'slow', 'jswing');
+		$(this).stop().animate({'top':'160px'},'slow', 'jswing');
 		}, function () {
-		$(this).stop().animate({'margin-top':subNavMarginTop}, 'slow', 'jswing');
+		$(this).stop().animate({'top':subNavMarginTop}, 'slow', 'jswing');
 	});
 	
 	var detachedArticles = null;
