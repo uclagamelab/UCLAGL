@@ -150,6 +150,7 @@ $(document).ready(function() {
 			}
 		}
 		$('ul.subnav').append($(this));
+		$(this).insertBefore($('ul.subnav li.tail'));
 		$('ul.subnav').css('margin-top',subNavMarginTop);
 		
 		if(detachedArticles)

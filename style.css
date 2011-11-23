@@ -348,7 +348,6 @@ ul.subnav li{
 	width: 94px;
 	height: auto;
 	padding: 5px 2px;
-	margin: 0;
 	border-top: 1px solid #666;
 	font: bold 12px "Courier New", Courier, mono;
 	color: #000000;
@@ -742,7 +741,6 @@ section#news_feed article#news_feed_content {
 	width: 934px;
 	height: 48px;
 	background: #ff7928;
-	font: 11px "Courier New", Courier, mono;
 	padding: 10px;
 	border: 1px solid #000;
 	height: 27px;
@@ -768,14 +766,13 @@ section#news_feed ul{
 }
 
 section#news_feed ul li{
-	font: 15px FFFCorporateRegular, "Courier New", Courier, mono;
-	list-style-type: none;
+/*	list-style-type: none;
 	text-transform: uppercase;
 	text-align: center;
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
-	text-align: center;
+	text-align: center;*/
 
 }
 section#news_feed ul li a{
@@ -1703,7 +1700,7 @@ div.bio_badge {
 
 div.bio_badge p{
 	text-transform:uppercase;
-	ffont: 12px "DejaVuSansBook","Courier New", Courier, mono;
+	font: 12px "DejaVuSansBook","Courier New", Courier, mono;
 	color: #000;
 	padding-left: 0;
 	margin-left: 22px;
@@ -2093,13 +2090,16 @@ marquee{
 
 div.pointer{
 	padding-top: 3px;
+	
 }
 
 a.kbrsswidget {
+	font: "DejaVuSansBook","Courier New", Courier, mono;
 	padding-left: 3px;
 	padding-right: 3px;
 	color: #3030ed;
 	font-size: 20px;
+	text-transform: uppercase;
 }
 
 a.kbrsswidget:hover{
