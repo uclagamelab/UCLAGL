@@ -30,6 +30,8 @@ function isValidEmail(f)
 	   return (str.indexOf(".") > 2) && (str.indexOf("@") > 0);
 }
 
+
+
 $(document).ready(function() {
 	
 //  nav stuff
@@ -103,7 +105,6 @@ $(document).ready(function() {
 
 			$('.subnav').append('<li class="background4 all">all</li>');
 			$('.subnav').append('<li class="tail"></li>');
-//			$('ul.subnav li.tail').css('background', 'url(images/bottomcap2.png) no-repeat -3px bottom')
 
 
 		}
@@ -119,7 +120,7 @@ $(document).ready(function() {
 
 			    $(this).stop().animate({'top':mainNavTop},'slow','easeOutBounce');
 			    }, function () {
-			    $(this).stop().animate({'top':'-18px'}, 'fast');
+			    $(this).stop().animate({'top':'-18px'}, 'fast', 'jswing');
 			});
 		}
 		
@@ -127,9 +128,9 @@ $(document).ready(function() {
 	});
 	
 	$('ul.subnav').hover(function() {
-		$(this).stop().animate({'margin-top':'160px'},'slow');
+		$(this).stop().animate({'margin-top':'160px'},'slow', 'jswing');
 		}, function () {
-		$(this).stop().animate({'margin-top':subNavMarginTop}, 'slow');
+		$(this).stop().animate({'margin-top':subNavMarginTop}, 'slow', 'jswing');
 	});
 	
 	var detachedArticles = null;
@@ -206,12 +207,12 @@ $(document).ready(function() {
 		$(this).hover(function(){
 			$(this).stop().animate({'margin-top':'30px'}, 'slow', 'easeOutBounce');
 		}, function(){
-			$(this).stop().animate({'margin-top':'2px'}, 'fast')
+			$(this).stop().animate({'margin-top':'2px'}, 'fast', 'jswing');
 		});
 	});
 
 		
-// random stuff
+
 
 // random stuff
 	
@@ -220,13 +221,25 @@ $(document).ready(function() {
 // end random stuff
 
 //	news section
-	$('#news').innerfade({
-		animationtype: 'fade',
-		speed: 200,
-		timeout: 4000,
-		type: 'sequence',
-		containerheight: '1em'
+	
+	$('marquee').marquee('pointer').mouseover(function () {
+	  $(this).trigger('stop');
+	}).mouseout(function () {
+	  $(this).trigger('start');
+	}).mousemove(function (event) {
+	  if ($(this).data('drag') == true) {
+	    this.scrollLeft = $(this).data('scrollX') + ($(this).data('x') - event.clientX);
+	  }
+	}).mousedown(function (event) {
+	  $(this).data('drag', true).data('x', event.clientX).data('scrollX', this.scrollLeft);
+	}).mouseup(function () {
+	  $(this).data('drag', false);
 	});
+	
+
+
+    
+//    end news section
 	
 //	this shortens the news feed to fit in the banner
 	$('a.kbrsswidget').each(function(){
@@ -239,13 +252,11 @@ $(document).ready(function() {
 	});
 //	end news section
 	
-// responsive layout
 
-		
-//end responsive layout
 
 //image gallery
 	$("span.gallery-icon a").attr('class', 'fancybox');
+	$("span.gallery-icon a").attr('rel', 'gallery');
 	
 	$("a.fancybox").fancybox({
 		'titleShow'		: false,
