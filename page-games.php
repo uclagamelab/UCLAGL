@@ -15,7 +15,7 @@ Template Name: Games Page
 			<?php 
 				$args = array( 
 					'post_type' => 'game', 
-					'tag' => 'current-projects',
+//					'tag' => 'current-projects',
 					//use tag__not_in to handle posts that are tagged slider and feature
 					//slider cat id is 33
 					//'tag__not_in' => array(33),
@@ -46,41 +46,7 @@ Template Name: Games Page
 				</article>
 			<?php 
 			$count ++;
-			endwhile; 				
-			$args = array( 
-				'post_type' => 'game', 
-				//'posts_per_page' => 6,
-				//'tag' => 'current-projects',
-				//use tag__not_in to handle posts that are tagged slider and feature
-				//slider cat id is 33
-				'tag__not_in' => array(32),
-			);
-			$loop = new WP_Query($args); 
-			while ( $loop->have_posts() ) : $loop->the_post(); 	
-			?>
-				<?php if($count%3==0){ ?>
-				<article class="featured_article last">
-				<?php }else{ ?>
-				<article class="featured_article">
-				<?php } ?>
-					<a href="<?php the_permalink() ?>">
-						<?php the_post_thumbnail('featured');  ?>
-					</a>
-					<div class="featured_article_text">
-						<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
-							<?php the_title( '<h3>', '</h3>' ); ?>
-						</a>
-						<p>
-							
-							<?php 
-								$short_description->the_field('description'); 
-								$short_description->the_value();
-							?>
-						</p>
-					</div>
-				</article>
-			<?php $count ++;?>
-			<?php endwhile; ?>
+			endwhile; ?>
 			</section><!-- feature_spots -->
 
 		</section><!-- main_section -->
