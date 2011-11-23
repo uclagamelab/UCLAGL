@@ -76,8 +76,8 @@ $(document).ready(function() {
 	var subNavList = null;
 	
 //	subNavMarginTop will adjust the offset of the subnav depending on the number of items in the list
-	var subNavMarginTop = 0;
-	var subNavMarginRollover = 0;
+	var subNavMarginTop =  85;
+	var subNavMarginRollover = 163;
 
 	var mainNavTop = -2;
 	$("li.main_nav").each(function(){
@@ -101,19 +101,13 @@ $(document).ready(function() {
 			$('.subnav').append('<li class="background'+allColor+' all">all</li>');
 			$('.subnav').append('<li class="tail"></li>');
 
-//			this is to offset the subnav, need to figure out how to make it relative
-			if($(this).is('.menu-item-994'))
-			{
-				subNavMarginTop = 25;
-				console.log($('ul.subnav').height());
-				subNavMarginRollover = 163;
-			}
-			else if($(this).is('.menu-item-1331'))
-			{
-				subNavMarginTop = 85;
-				console.log($('ul.subnav').height());
-				subNavMarginRollover = 163;
-			}
+
+			//this will offset subNavMargin relative to the number of items in the list
+			var x = subNavList.list.length - 2;
+			if( x > 0 ) subNavMarginTop = subNavMarginTop - (25 * x);
+
+			
+			
 			$('ul.subnav').css('top',subNavMarginTop);
 		}
 
