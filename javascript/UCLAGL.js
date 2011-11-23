@@ -77,10 +77,11 @@ $(document).ready(function() {
 	
 //	subNavMarginTop will adjust the offset of the subnav depending on the number of items in the list
 	var subNavMarginTop = 0;
-	
+	var subNavMarginRollover = 0;
+
 	var mainNavTop = -2;
 	$("li.main_nav").each(function(){
-	
+
 		if( $(this).hasClass('current-menu-item') && $(this).is('.menu-item-994, .menu-item-1331') )
 		{
 			if($(this).is('.menu-item-994')) subNavList = {'list':subcats, 'type':'category'};
@@ -88,9 +89,9 @@ $(document).ready(function() {
 
 			$(this).prepend("<ul class='subnav'></ul>");
 
-			
+
 			$('.subnav').append('<li class="background4 cap"></li>');
-			
+
 			for(var i = 0; i<subNavList.list.length; i++)
 			{
 				$('.subnav').append('<li class="background'+(i%5)+' '+subNavList.list[i]+'" >'+subNavList.list[i]+'</li>');
@@ -99,11 +100,20 @@ $(document).ready(function() {
 			var allColor = Math.floor(Math.random() * (4 + 1));
 			$('.subnav').append('<li class="background'+allColor+' all">all</li>');
 			$('.subnav').append('<li class="tail"></li>');
-			
-//			this is to offset the subnav, need to figure out how to make it relative
-			if($(this).is('.menu-item-994')) subNavMarginTop = $('ul.subnav').height() - 183;
-			else if($(this).is('.menu-item-1331')) subNavMarginTop = $('ul.subnav').height() - 33;
 
+//			this is to offset the subnav, need to figure out how to make it relative
+			if($(this).is('.menu-item-994'))
+			{
+				subNavMarginTop = 25;
+				console.log($('ul.subnav').height());
+				subNavMarginRollover = 163;
+			}
+			else if($(this).is('.menu-item-1331'))
+			{
+				subNavMarginTop = 85;
+				console.log($('ul.subnav').height());
+				subNavMarginRollover = 163;
+			}
 			$('ul.subnav').css('top',subNavMarginTop);
 		}
 
@@ -121,12 +131,12 @@ $(document).ready(function() {
 			    $(this).stop().animate({'top':'-18px'}, 'fast', 'jswing');
 			});
 		}
-		
+
 
 	});
-	
+
 	$('ul.subnav').hover(function() {
-		$(this).stop().animate({'top':'160px'},'slow', 'jswing');
+		$(this).stop().animate({'top':subNavMarginRollover},'slow', 'jswing');
 		}, function () {
 		$(this).stop().animate({'top':subNavMarginTop}, 'slow', 'jswing');
 	});
@@ -149,7 +159,7 @@ $(document).ready(function() {
 		}
 		$('ul.subnav').append($(this));
 		$(this).insertBefore($('ul.subnav li.tail'));
-		$('ul.subnav').css('margin-top',subNavMarginTop);
+		$('ul.subnav').css('top',subNavMarginTop);
 		
 		if(detachedArticles)
 		{
