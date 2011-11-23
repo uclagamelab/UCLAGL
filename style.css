@@ -416,10 +416,16 @@ ul.subnav li.background4{
 
 	background-color: #2b2525;
 	padding: 67px 80px 27px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
+
+	
+	-moz-border-radius-bottomleft: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	
 	border: 3px solid #adadad;
-	margin-top: 5px;
 }
 
 
@@ -503,7 +509,7 @@ div#opening_image{
 	overflow:hidden;
 	margin-left: -80px;
 	display: inline-block;
-	margin-top: -98px;
+	margin-top: -77px;
 	padding: 0px;
 	float: left;
 	margin-bottom: -50px;
