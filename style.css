@@ -543,7 +543,7 @@ hr{
 	position: absolute;
 	top: 0;
 	left: 0;
-	border: 8px solid #000;
+	border: 8px solid #2b2525;
 }
 
 /* Width below is max for Opera */
@@ -569,7 +569,7 @@ hr{
 }
 
 .anythingSlider .wrapper ul li div.slider_caption {
-	background-color: #020101;
+	background-color: #2b2525;
 	height: 82px;
 	width: 300px;
 	font: 11px "Courier New", Courier, mono;
