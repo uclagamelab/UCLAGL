@@ -97,11 +97,12 @@ $(document).ready(function() {
 				$('.subnav').append('<li class="background'+(i%5)+' '+subNavList.list[i]+'" >'+subNavList.list[i]+'</li>');
 			}
 
-			$('.subnav').append('<li class="background4 all">all</li>');
+			var allColor = Math.floor(Math.random() * (4 + 1));
+			$('.subnav').append('<li class="background'+allColor+' all">all</li>');
 			$('.subnav').append('<li class="tail"></li>');
 			
 			
-			if($(this).is('.menu-item-994')) subNavMarginTop = $('ul.subnav').height() - 285;
+			if($(this).is('.menu-item-994')) subNavMarginTop = $('ul.subnav').height() - 183;
 			else if($(this).is('.menu-item-1331')) subNavMarginTop = $('ul.subnav').height() - 33;
 
 			$('ul.subnav').css('top',subNavMarginTop);
