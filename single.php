@@ -6,18 +6,16 @@
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 
 				<?php
-				echo('<div id="opening_image" >');
-				the_post_thumbnail('slider'); 
-				echo('</div>');
+				if(has_post_thumbnail()){
+					echo('<div id="opening_image" >');
+					the_post_thumbnail('slider'); 
+					echo('</div>');
+				}
 				?>
 				<header>	
 					<h1><?php the_title(); ?></h1>	
 					<p>Posted on <?php the_time('F jS, Y'); ?> by <?php the_author(); ?></p>
 				</header>
-
-
-					
-
 					
 					<?php the_content(); ?>
 
