@@ -18,16 +18,9 @@
 
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<!--		<script src="<?php bloginfo('template_directory'); ?>/javascript/jquery.easing.1.2.js"></script>-->
-		<script src="<?php bloginfo('template_directory'); ?>/javascript/jquery.easing-1.3.pack.js"></script>
-		<script src="<?php bloginfo('template_directory'); ?>/javascript/jquery.anythingslider.js"></script>
-		
+		<script src="<?php bloginfo('template_directory'); ?>/javascript/jquery.easing.1.2.js"></script>
 		<script src="<?php bloginfo('template_directory'); ?>/javascript/jquery.marquee.js"></script>
-		
-		<script src="<?php bloginfo('template_directory'); ?>/javascript/jquery.mousewheel-3.0.6.pack.js"></script>
-		<script src="<?php bloginfo('template_directory'); ?>/javascript/jquery.fancybox.pack.js"></script>
-		
-		
+		<script src="<?php bloginfo('template_directory'); ?>/javascript/jquery.anythingslider.js"></script>
 		<script src="<?php bloginfo('template_directory'); ?>/javascript/UCLAGL.js"></script>
 		
 		<?php wp_head(); ?>
