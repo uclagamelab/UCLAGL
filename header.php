@@ -60,7 +60,7 @@
 				<a href="http://www.facebook.com/pages/UCLA-Game-Lab/150951808280719" title="Friend us on Facebook"><div id="subscribe_fb" class="subscribe"><span>Friend us on Facebook</span></div></a><!-- subscribe_fb -->
 				<a href="http://twitter.com/uclagames" title="Follow us on Twitter"><div id="subscribe_tw" class="subscribe"><span>Follow us on Twitter</span></div></a><!-- subscribe_tw -->
 				<a href="http://eepurl.com/cG3WU" title="Subscribe to our mailing list"><div id="subscribe_em" class="subscribe"><span>Subscribe to our mailing list</span></div></a><!-- subscribe_em -->
-				<a href="http://games.ucla.edu/category/blog" title="Subscribe to our blog"><div id="subscribe_bl" class="subscribe last"><span>Subscribe to our blog</span></div></a><!-- subscribe_em -->
+				<a href="http://feeds.feedburner.com/uclagamelab" title="Subscribe to our blog"><div id="subscribe_bl" class="subscribe last"><span>Subscribe to our blog</span></div></a><!-- subscribe_em -->
 			</section><!-- social_box -->
 		</header>
 		

@@ -181,7 +181,7 @@ $(document).ready(function() {
 //extra bit to have nav flag down on single post views
 	if( $('article').hasClass('game') ) $("li.main_nav.menu-item-461").css('top',mainNavTop);
 	else if ($('article').hasClass('resource')) $("li.main_nav.menu-item-994").css('top',mainNavTop);
-	else if ($('article').hasClass('post')) $("li.main_nav.menu-item-1319").css('top',mainNavTop);
+	else if ($('article').hasClass('post')) $("li.main_nav.menu-item-1348").css('top',mainNavTop);
 		
 
 //  slider stuff

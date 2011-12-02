@@ -707,12 +707,4 @@ function my_gallery_shortcode($attr) {
 
 	return $output;
 }
-
-
 ?>
-
-
-
-
-
-
