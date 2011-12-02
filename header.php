@@ -13,7 +13,7 @@
 		<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS 2.0 Feed" href="<?php bloginfo('rss2_url'); ?>">
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-		
+		<link rel="icon" type="image/ico" href="<?php bloginfo('template_directory'); ?>/favicon.ico">
 		
 
 

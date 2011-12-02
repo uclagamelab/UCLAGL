@@ -134,6 +134,7 @@ section#game_caption{
 	margin-bottom: 22px;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	margin-top: 22px;
 }
 
 section#game_caption h2{
@@ -579,13 +580,15 @@ hr{
 	background-color: #2b2525;
 	height: 82px;
 	width: 300px;
-	font: 11px "Courier New", Courier, mono;
+/*	font: 11px "Courier New", Courier, mono;*/
+	
 	padding: 10px;
 	position: relative;
 	display: inline-block;
 	left: 620px;
 	bottom: 104px;
-	color: #d0d0d0;
+	color: #ffffeb;
+	line-height: 1.5em;
 }
 .anythingSlider .wrapper ul li div.slider_caption h3{
 	font-family: FFFCorporateRegular, "Courier New", Courier, mono;
@@ -851,8 +854,9 @@ article.featured_article div.featured_article_text a:link, article.featured_arti
 
 
 article.featured_article div.featured_article_text p{
-	font: 11px "Courier New", Courier, mono;
+/*	font: 11px "Courier New", Courier, mono;*/
 	color: #ffffeb;
+	line-height: 1.7em;
 }
 
 
@@ -1616,6 +1620,7 @@ form.search{
 .category-blog section#main_section section.grey_plate h1#blog_header{
 	text-align:center;
 	font-size: 6em;
+	margin-top: 20px;
 }
 
 .category-blog section#main_section h1{
@@ -2095,6 +2100,7 @@ div.bio_article_text {
 marquee{
 	font-size: 22px;
 	height: 34px;
+	
 }
 
 div.pointer{
@@ -2103,7 +2109,8 @@ div.pointer{
 }
 
 a.kbrsswidget {
-	font: "DejaVuSansBook","Courier New", Courier, mono;
+/*	font: "DejaVuSansBook","Courier New", Courier, mono;*/
+	font: 11px FFFCorporateRegular, "Courier New", Courier, mono;
 	padding-left: 3px;
 	padding-right: 3px;
 	color: #000;
