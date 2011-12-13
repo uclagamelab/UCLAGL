@@ -534,12 +534,7 @@ function my_map_meta_cap( $caps, $cap, $user_id, $args ) {
 			$caps[] = $post_type->cap->edit_others_posts;
 	}
 	
-	if ( 'edit_others_games' == $cap ) {
-		if ( $user_id == $post->post_author )
-			$caps[] = $post_type->cap->edit_posts;
-		else
-			$caps[] = $post_type->cap->edit_others_posts;
-	}
+
 	
 	/* If editing a resource, assign the required capability. */
 	if ( 'edit_resource' == $cap ) {
@@ -549,12 +544,7 @@ function my_map_meta_cap( $caps, $cap, $user_id, $args ) {
 			$caps[] = $post_type->cap->edit_others_posts;
 	}
 	
-	if ( 'edit_others_resource' == $cap ) {
-		if ( $user_id == $post->post_author )
-			$caps[] = $post_type->cap->edit_posts;
-		else
-			$caps[] = $post_type->cap->edit_others_posts;
-	}
+
 	
 	if ( 'edit_person' == $cap ) {
 		if ( $user_id == $post->post_author )
