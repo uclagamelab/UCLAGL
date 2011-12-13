@@ -82,10 +82,10 @@ $(document).ready(function() {
 	var mainNavTop = -2;
 	$("li.main_nav").each(function(){
 
-		if( $(this).hasClass('current-menu-item') && $(this).is('.menu-item-994, .menu-item-1331') )
+		if( $(this).hasClass('current-menu-item') && $(this).is('.menu-item-994, .menu-item-1323') )
 		{
 			if($(this).is('.menu-item-994')) subNavList = {'list':subcats, 'type':'category'};
-			else if($(this).is('.menu-item-1331')) subNavList = {'list':subtags, 'type':'tag'};
+			else if($(this).is('.menu-item-1323')) subNavList = {'list':subtags, 'type':'tag'};
 
 			$(this).prepend("<ul class='subnav'></ul>");
 

@@ -27,6 +27,17 @@ add_filter('post_updated_messages', 'my_post_updated_messages');
 
 add_filter( 'map_meta_cap', 'my_map_meta_cap', 10, 4 );
 
+add_filter('upload_mimes', 'custom_upload_mimes');
+
+function custom_upload_mimes ( $existing_mimes=array() ) {
+	// add your extension to the array
+	$existing_mimes['unity3d'] = 'application/vnd.unity';
+	
+	// add as many as you like
+	// and return the new full result
+	return $existing_mimes;
+}
+
 add_filter( 'pre_get_posts', 'my_get_posts' );
 
 function my_get_posts( $query ) {
@@ -90,7 +101,7 @@ $short_description = new WPAlchemy_MetaBox(array
 	'id' => '_short_description',
 	'title' => 'Short Description',	
 	'template' => TEMPLATEPATH . '/custom/short_description_meta.php',
-	'types' => array('game', 'resource', 'person', 'post', 'page'),
+	'types' => array('game', 'resource', 'person'),
 	'priority' => 'high',
 ));
 
@@ -108,7 +119,7 @@ $link_out = new WPAlchemy_MetaBox(array
 	'id' => '_link_out',
 	'title' => 'Link Out',	
 	'template' => TEMPLATEPATH . '/custom/link_out_meta.php',
-	'types' => array('game', 'resource', 'person', 'post'),
+	'types' => array('game', 'resource', 'person'),
 	'priority' => 'low',
 ));
 
@@ -117,7 +128,7 @@ $context = new WPAlchemy_MetaBox(array
 	'id' => '_context',
 	'title' => 'Context',	
 	'template' => TEMPLATEPATH . '/custom/context_meta.php',
-	'types' => array('game', 'post'),
+	'types' => array('game'),
 	'priority' => 'high',
 ));
 
@@ -137,7 +148,7 @@ $attachments = new WPAlchemy_MetaBox(array
 	'id' => '_attachments',
 	'title' => 'Attachments',	
 	'template' => TEMPLATEPATH . '/custom/attachments_meta.php',
-	'types' => array('game', 'resource', 'post'),
+	'types' => array('game', 'resource'),
 	'priority' => 'low',
 ));
 

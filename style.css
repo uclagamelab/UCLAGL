@@ -41,17 +41,7 @@ Tags: minimalist, template, html5
 
 }
 
-@font-face {
-    font-family: 'DejaVuSansBook';
-    src: url('fonts/DejaVuSans-webfont.eot');
-    src: url('fonts/DejaVuSans-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/DejaVuSans-webfont.woff') format('woff'),
-         url('fonts/DejaVuSans-webfont.ttf') format('truetype'),
-         url('fonts/DejaVuSans-webfont.svg#DejaVuSansBook') format('svg');
-    font-weight: normal;
-    font-style: normal;
 
-}
 
 @font-face {
     font-family: 'DejaVuSansBold';
@@ -64,6 +54,19 @@ Tags: minimalist, template, html5
     font-style: normal;
 
 }
+
+@font-face {
+    font-family: 'DejaVuSansMonoBook';
+    src: url('fonts/dejavusansmono-book-webfont-webfont.eot');
+    src: url('fonts/dejavusansmono-book-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/dejavusansmono-book-webfont-webfont.woff') format('woff'),
+         url('fonts/dejavusansmono-book-webfont-webfont.ttf') format('truetype'),
+         url('fonts/dejavusansmono-book-webfont-webfont.svg#DejaVuSansMonoBook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 
 
 header, footer, section, article, aside, nav {
@@ -82,7 +85,7 @@ html {
 	background: #1d1d1d;
 /*	color: #d5d5d5;*/
 	color: #ffffeb;
-	font: 12px/1.8em "DejaVuSansBook","Courier New", Courier, mono;
+	font: 12px/1.8em "DejaVuSansMonoBook","Courier New", Courier, mono;
 	
 }
 
@@ -375,7 +378,7 @@ li.menu-item-994 ul.subnav li.tail{
 	background: url(images/bottomcap3.png) no-repeat -3px bottom;
 }
 
-li.menu-item-1331 ul.subnav li.tail{
+li.menu-item-1323 ul.subnav li.tail{
 	background: url(images/bottomcap1.png) no-repeat -3px bottom;
 }
 
@@ -490,7 +493,7 @@ section#game_meta{
 }
 
 section#game_meta article h3 {
-	font: 14px "DejaVuSansBook","Courier New", Courier, mono;
+	font: 14px "DejaVuSansMonoBook","Courier New", Courier, mono;
 	color: #d42557;
 
 }
@@ -499,7 +502,7 @@ section#game_meta article{
 }
 
 section#game_meta article span.name{
-	font: "DejaVuSansBook","Courier New", Courier, mono;	
+	font: "DejaVuSansMonoBook","Courier New", Courier, mono;	
 	color: #00b0f1;
 }
 
@@ -1606,7 +1609,7 @@ form.search{
 }
 
 #game_footer_links h3 {
-	font: 14px "DejaVuSansBook","Courier New", Courier, mono;
+	font: 14px "DejaVuSansMonoBook","Courier New", Courier, mono;
 	color: #d42557;
 	float: right;
 }
@@ -1714,7 +1717,7 @@ div.bio_badge {
 
 div.bio_badge p{
 	text-transform:uppercase;
-	font: 12px "DejaVuSansBook","Courier New", Courier, mono;
+	font: 12px "DejaVuSansMonoBook","Courier New", Courier, mono;
 	color: #000;
 	padding-left: 0;
 	margin-left: 22px;
@@ -2109,7 +2112,7 @@ div.pointer{
 }
 
 a.kbrsswidget {
-/*	font: "DejaVuSansBook","Courier New", Courier, mono;*/
+/*	font: "DejaVuSansMonoBook","Courier New", Courier, mono;*/
 	font: 11px FFFCorporateRegular, "Courier New", Courier, mono;
 	padding-left: 3px;
 	padding-right: 3px;
