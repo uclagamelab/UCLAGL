@@ -8,6 +8,7 @@
 		<option value="CS"<?php $mb->the_select_state('CS'); ?>>CS</option>
 		<option value="Math"<?php $mb->the_select_state('Math'); ?>>Math</option>
 		<option value="Architecture"<?php $mb->the_select_state('Architecture'); ?>>Architecture</option>
+		<option value="UCLA Community School"<?php $mb->the_select_state('UCLACS'); ?>>UCLA Community School</option>
 	</select>
 
 </div>
