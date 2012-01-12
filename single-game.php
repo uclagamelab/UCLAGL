@@ -67,15 +67,22 @@
 					<? } ?>
 					
 					<section id="game_meta">
-						<article id="game_context">
-							<h3>CONTEXT</h3>
-							<?php
-								$context->the_field('context');
-								$context->the_value();
-							?>
-							<!-- commented out until we create a seperate type for events, etc... -->
-							<!-- <br/>Created <?php the_time('F jS, Y'); ?> -->
-						</article><!-- game_context -->
+					<?php
+						$context->the_field('context');
+						if($context->the_value()){
+						?>
+							<article id="game_context">
+								<h3>CONTEXT</h3>
+								<?php
+									$context->the_value();
+								?>
+								<!-- commented out until we create a seperate type for events, etc... -->
+								<!-- <br/>Created <?php the_time('F jS, Y'); ?> -->
+							</article><!-- game_context -->
+						<?php
+						}
+					?>
+						
 						<article id="game_medium">
 							<h3>MEDIUM</h3>
 							<?php
