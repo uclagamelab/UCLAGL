@@ -67,56 +67,56 @@ Template Name: People Page
 							?>
 						</p>
 					</div><!-- bio_article_text -->
-					
-					<? 
-					// $lab_employee->the_field('job_title');
-					$my_meta = $lab_employee->the_meta();
-					if($my_meta['job_title'] != ""){ 
-					
-					?>
-						<div class="bio_badge blue">
-							<p>Game Lab <? echo $my_meta['job_title']; ?></p>
-						</div><!-- lab_title -->
-					<? } ?>
-					
-					
-	
-					
-					<div class="bio_badge yellow">
-						<p>
-						<?
-							$person_department->the_field('person_department');
-							$person_department->the_value();
-						?> 
-						<?
-							$person_title->the_field('person_title');
-							$person_title->the_value();
-						?> 
-
-						</p>
-					</div><!-- bio_title -->
-					
-
-							
-						<?	
-							$i=1;
-							$my_meta = $link_out->the_meta();
-							foreach($my_meta['out_links'] as $link)
-							{
-								
-								if($i%2==0){
-									?>
-								<div class="bio_badge yellow">
-								<? }else{ ?>
-								<div class="bio_badge blue">	
-								<? } ?>
-									<a href="<? echo $link['link']; ?>" ><p><? echo $link['title']; ?></p></a>
-								</div><!-- bio_links -->
-						<?
-						 		$i++;
-							} 
+					<div class="badges">
+						<? 
+						// $lab_employee->the_field('job_title');
+						$my_meta = $lab_employee->the_meta();
+						if($my_meta['job_title'] != ""){ 
+						
 						?>
-
+							<div class="bio_badge blue">
+								<p>Game Lab <? echo $my_meta['job_title']; ?></p>
+							</div><!-- lab_title -->
+						<? } ?>
+						
+						
+		
+						
+						<div class="bio_badge yellow">
+							<p>
+							<?
+								$person_department->the_field('person_department');
+								$person_department->the_value();
+							?> 
+							<?
+								$person_title->the_field('person_title');
+								$person_title->the_value();
+							?> 
+	
+							</p>
+						</div><!-- bio_title -->
+						
+	
+								
+							<?	
+								$i=1;
+								$my_meta = $link_out->the_meta();
+								foreach($my_meta['out_links'] as $link)
+								{
+									
+									if($i%2==0){
+										?>
+									<div class="bio_badge yellow">
+									<? }else{ ?>
+									<div class="bio_badge blue">	
+									<? } ?>
+										<a href="<? echo $link['link']; ?>" ><p><? echo $link['title']; ?></p></a>
+									</div><!-- bio_links -->
+							<?
+							 		$i++;
+								} 
+							?>
+						</div><!--badges-->
 
 					
 				</article><!-- bio_article -->

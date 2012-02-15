@@ -1667,7 +1667,16 @@ form.search{
 /* @end */
 
 /* @group ABOUT PAGE */
+section#main_description, #about_map {
+	background-color: #2b2525;
+	padding: 17px;
+	margin-top: 0;
+	margin-bottom: 40px;
+}
 
+section#bio_banner{
+	margin-top: -60px;
+}
 article#bio_banner_title {
 	background-color: #fff200;
 	position: relative;
@@ -1677,9 +1686,6 @@ article#bio_banner_title {
 	padding-left: 22px;
 }
 
-#bio_banner_title p {
-
-}
 
 #bio_banner_title span {
 
@@ -1696,22 +1702,22 @@ article#bio_banner_title {
 }
 
 
-
-
-section#main_description, #about_map {
-	background-color: #2b2525;
-	padding: 17px;
-	margin-top: 0;
-	margin-bottom: 40px;
+div.badges{
+	position: relative;
+	display: block;
+	
+	
 }
 
 div.bio_badge {
 	margin-right: 0;
-	float: right;
 	display: inline-block;
-	height: 24px;
-	margin-top: 18px;
+	position: relative;
+	float: right;
 	clear: right;
+	height: 24px;
+	margin-bottom: 15px;
+	top: 20px;
 }
 
 
@@ -1781,22 +1787,23 @@ div.bio_links a:hover{
 }
 
 div.bio_article_text h3 {
+	margin-top: 0px;
 }
 
 article.bio_article {
 	background-color: #2b2525;
-	overflow: hidden;
 	margin-top: 22px;
-	height: 219px;
 	line-height: 17px;
+	display: inline-block;
+	padding: 5px 0 5px 5px;
 }
 
 div.bio_article_text {
 	display: inline-block;
 	float: left;
 	width: 37%;
-	margin: 2px 17px 17px;
 	font-size: 11px;
+	margin: 2px 17px 0;
 }
 
 #bio_spots{
