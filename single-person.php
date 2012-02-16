@@ -34,5 +34,6 @@
 
 	<?php endif; ?>
 </section><!-- main_section -->
+<h1>This is the single person template</h1>
 
 <?php get_footer(); ?>

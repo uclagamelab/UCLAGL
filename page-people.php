@@ -26,24 +26,13 @@ Template Name: People Page
 			<?php endwhile; ?>
 			
 			
-			<section id="bio_banner">
 
-					
-				<article id="bio_banner_background"><img src="<?php bloginfo('template_directory'); ?>/images/yellow_banner.png" /></article>
-				<article id="bio_banner_title">
-					<p>
-						<span>CURRENT GAME LAB TEAM ~</span> 
-						Here's a little more about people who work in the game lab
-					</p>
-				</article>
-			</section><!-- news_feed -->
 			
 			<section id="bio_spots">
 			
 			<?php 
 				$args = array( 
 					'post_type' => 'person',
-					'tag' => 'active,alumni',
 					'order' => 'ASC',
 				);
 				$loop = new WP_Query($args);

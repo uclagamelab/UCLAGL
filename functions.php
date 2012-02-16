@@ -23,6 +23,10 @@ add_image_size('resources-index', 107, 98, true);
 
 add_action('init', 'my_init');
 
+add_action( 'manage_posts_custom_column' , 'custom_columns' );
+
+add_filter('manage_edit-person_columns' , 'set_edit_person_columns');
+
 add_filter('post_updated_messages', 'my_post_updated_messages');
 
 add_filter( 'map_meta_cap', 'my_map_meta_cap', 10, 4 );
@@ -101,7 +105,7 @@ $short_description = new WPAlchemy_MetaBox(array
 	'id' => '_short_description',
 	'title' => 'Short Description',	
 	'template' => TEMPLATEPATH . '/custom/short_description_meta.php',
-	'types' => array('game', 'resource', 'person'),
+	'types' => array('game', 'resource', 'person', 'page'),
 	'priority' => 'high',
 ));
 
@@ -189,6 +193,7 @@ function my_init()
 	$menu_locations = array(
 			'main-nav' => 'Header',
 			'footer-nav' => 'Footer',
+			'people-sub-nav' => 'People Subnav',
 	);
 	register_nav_menus($menu_locations);
 	create_post_types();
@@ -222,7 +227,7 @@ function create_post_types(){
 	create_game_type();
 	create_resource_type();
 	create_people_type();
-	// create_context_taxonomy();
+	create_status_taxonomy();
 }
 
 
@@ -356,43 +361,44 @@ function create_people_type(){
 		'publicly_queryable' => true,
 		'show_ui' => true, 
 		'query_var' => true,
-		'rewrite' => array("slug" => "people"), // Permalinks format
+		'rewrite' => array("slug" => "person"), // Permalinks format
 		'capability_type' => 'person',
 		'capabilities' => $capabilities,
 		'hierarchical' => false,
 		'supports' => array('thumbnail','title'), 
 		'menu_position' => 5,
-		'taxonomies' => array('post_tag','category'),
+//		'taxonomies' => array('post_tag','category'),
 		// 'menu_icon' => get_stylesheet_directory_uri() . '/images/star.png',
 	); 
 	register_post_type('person',$args);
 }
 
-function create_context_taxonomy(){
+function create_status_taxonomy(){
 	// Add new taxonomy, NOT hierarchical (like tags)
   $labels = array(
-    'name' => _x( 'Context', 'taxonomy general name' ),
-    'singular_name' => _x( 'Context', 'taxonomy singular name' ),
-    'search_items' =>  __( 'Search Contexts' ),
-    'popular_items' => __( 'Popular Contexts' ),
-    'all_items' => __( 'All Contexts' ),
+    'name' => _x( 'Status', 'taxonomy general name' ),
+    'singular_name' => _x( 'Status', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Status' ),
+    'popular_items' => __( 'Popular Status' ),
+    'all_items' => __( 'All Status' ),
     'parent_item' => null,
     'parent_item_colon' => null,
-    'edit_item' => __( 'Edit Context' ), 
-    'update_item' => __( 'Update Context' ),
-    'add_new_item' => __( 'Add New Context' ),
-    'new_item_name' => __( 'New Context Name' ),
-    'separate_items_with_commas' => __( 'Separate contexts with commas' ),
-    'add_or_remove_items' => __( 'Add or remove contexts' ),
-    'choose_from_most_used' => __( 'Choose from the most used contexts' )
+    'edit_item' => __( 'Edit Status' ), 
+    'update_item' => __( 'Update Status' ),
+    'add_new_item' => __( 'Add New Status' ),
+    'new_item_name' => __( 'New Status Name' ),
+    'separate_items_with_commas' => __( 'Separate status with commas' ),
+    'add_or_remove_items' => __( 'Add or remove status' ),
+    'choose_from_most_used' => __( 'Choose from the most used status' )
   ); 
 
-  register_taxonomy('context','game',array(
+  register_taxonomy('status','person',array(
     'hierarchical' => false,
     'labels' => $labels,
     'show_ui' => true,
     'query_var' => true,
-    'rewrite' => array( 'slug' => 'context' ),
+    'update_count_callback' => '_update_post_term_count',
+    'rewrite' => array( 'slug' => 'people' ),
   ));
 }
 
@@ -610,6 +616,38 @@ function my_map_meta_cap( $caps, $cap, $user_id, $args ) {
 
 	/* Return the capabilities required by the user. */
 	return $caps;
+}
+
+function set_edit_person_columns($columns) {
+    return array(
+        'cb' => '<input type="checkbox" />',
+        'title' => __('Title'),
+        'date' => __('Date'),
+        'status' =>__( 'Status'),
+    );
+}
+
+function custom_columns( $column ) {
+
+	global $post;
+	
+	switch ( $column )
+	{
+		case 'status':
+			$terms = get_the_term_list( $post->ID , 'status' , '' , ',' , '' );
+			if ( is_string( $terms ) ) {
+				echo $terms;
+			}  
+			else 
+			{
+				echo 'Status not set';
+			}
+			
+			break;
+//		case 'publisher':
+//			echo get_post_meta( $post->ID , 'publisher' , true ); 
+//			break;
+	}
 }
 
 //the own renamed function
