@@ -1330,7 +1330,6 @@ form p span input{
 section#contact {
 	background-color: #2b2525;
 	padding: 106px 27px 27px;
-	margin-top: -97px;
 	overflow: hidden;
 	list-style-type: none;
 	display: inline-block;
@@ -1338,7 +1337,6 @@ section#contact {
 
 section#contact.embed {
 	padding: 16px 27px 27px;
-	margin-top: 30px;
 }
 section#contact li h2{
 	font-size: 40px;
@@ -1792,10 +1790,11 @@ div.bio_article_text h3 {
 
 article.bio_article {
 	background-color: #2b2525;
-	margin-top: 22px;
+	margin-bottom: 22px;
 	line-height: 17px;
 	display: inline-block;
 	padding: 5px 0 5px 5px;
+	width: 954px;
 }
 
 div.bio_article_text {
