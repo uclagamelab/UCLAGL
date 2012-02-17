@@ -57,19 +57,7 @@ $(document).ready(function() {
 	subcats = subcats.unique();
 
 	
-	//this is to get the tab names from all the articles on the page
-	var subtags = [];
-	$('article[class*="tag"]').each(function(index){
-		var allClasses = $(this).attr('class').split(' ');
-		
-		for(var i = 0; i<allClasses.length; i++)
-		{
-			var matches = /^tag\-(.+)/.exec(allClasses[i]);
-			if(matches != null) subtags.push(matches[1]);
-			
-		}
-	});
-	subtags = subtags.unique();
+
 	
 		
 //	subNavList will hold either tags or categories depending on parent menu item
@@ -82,10 +70,10 @@ $(document).ready(function() {
 	var mainNavTop = -2;
 	$("li.main_nav").each(function(){
 
-		if( $(this).hasClass('current-menu-item') && $(this).is('.menu-item-994, .menu-item-1323') )
+		if( $(this).hasClass('current-menu-item') && $(this).is('.menu-item-994') )
 		{
-			if($(this).is('.menu-item-994')) subNavList = {'list':subcats, 'type':'category'};
-			else if($(this).is('.menu-item-1323')) subNavList = {'list':subtags, 'type':'tag'};
+			subNavList = {'list':subcats, 'type':'category'};
+			
 
 			$(this).prepend("<ul class='subnav'></ul>");
 
@@ -110,7 +98,8 @@ $(document).ready(function() {
 			
 			$('ul.subnav').css('top',subNavMarginTop);
 		}
-
+		
+		
 		if( $(this).hasClass('current-menu-item') )
 		{
 			$(this).css('top', mainNavTop);
@@ -135,11 +124,19 @@ $(document).ready(function() {
 		$(this).stop().animate({'top':subNavMarginTop}, 'slow');
 	});
 	
+	$('ul.sub-menu').prepend('<li class="filler"></li>');
+	$('ul.sub-menu').append('<li class="tail"></li>');
+	$('ul.sub-menu').hover(function() {
+		$(this).stop().animate({'top':0},'fast');
+		}, function () {
+		$(this).stop().animate({'top':-58}, 'slow');
+	});
+	
 	var detachedArticles = null;
 	$('ul.subnav li').click(function(){
 		function fixGrid(){
 			$('article.resource').removeClass('last');
-			var articles = $('article.resource:visible, article.person:visible');
+			var articles = $('article.resource:visible');
 			var i = 0;
 			var j = 0;
 			while(i < articles.length){
@@ -157,19 +154,16 @@ $(document).ready(function() {
 		
 		if(detachedArticles)
 		{
-			$('section#feature_spots, section#bio_spots').prepend(detachedArticles);
+			$('section#feature_spots').prepend(detachedArticles);
 			detachedArticles = null;
 		}
 		
 		if(!$(this).hasClass('all')){
-			detachedArticles = $("article.resource, article.person").not('.'+subNavList.type+'-'+$(this).text()).detach();
+			detachedArticles = $("article.resource").not('.'+subNavList.type+'-'+$(this).text()).detach();
 			console.log('.'+subNavList.type+'-'+$(this).text());
 		}
 		
 		fixGrid();
-		
-
-	
 	});
 	
 
@@ -179,6 +173,7 @@ $(document).ready(function() {
 
 
 //extra bit to have nav flag down on single post views
+//this is where we update for hangdown on people subnav
 	if( $('article').hasClass('game') ) $("li.main_nav.menu-item-461").css('top',mainNavTop);
 	else if ($('article').hasClass('resource')) $("li.main_nav.menu-item-994").css('top',mainNavTop);
 	else if ($('article').hasClass('post')) $("li.main_nav.menu-item-1348").css('top',mainNavTop);
@@ -251,20 +246,10 @@ $(document).ready(function() {
 //	this shortens the slider caption
 	
 	$('.anythingSlider .wrapper ul li div.slider_caption p').each(function(){
-	 $(this).text($(this).html().substring(0,200 )); 
+	 $(this).text($(this).html().substring(0,200)); 
 	});
 
 //	end news section
-	
-
-
-//image gallery
-//	$("span.gallery-icon a").attr('class', 'fancybox');
-//	$("span.gallery-icon a").attr('rel', 'gallery');
-	
-//	$("a.fancybox").fancybox();
-
-//end image gallery
 	
 
 });

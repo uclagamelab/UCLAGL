@@ -330,9 +330,13 @@ nav#header_nav>ul>li>a:link, nav#header_nav>ul>li>a:visited {
 	background: url(images/blog.png) no-repeat;
 }
 
+nav#header_nav>ul>li ul.sub-menu{
+	position: relative;
+	top: -58px;
+}
+
 nav#header_nav>ul>li ul.sub-menu li{
-	top: 30px;
-	left: -35px;
+	left: -36px;
 	text-align: center;
 	display: inline-block;
 	position: relative;
@@ -342,12 +346,23 @@ nav#header_nav>ul>li ul.sub-menu li{
 	height: auto;
 	border-top: 1px solid #666;
 	font: bold 12px "Courier New", Courier, mono;
-	
+	margin: 0px;
 	padding: 5px 2px;
+}
+
+nav#header_nav>ul>li ul.sub-menu li.filler{
+	height: 20px;
+	margin-bottom: -3px;
+}
+
+nav#header_nav>ul>li ul.sub-menu li.tail{
+	height: 28px;
+	background: url(images/bottomcap2.png) no-repeat -5px bottom;
 }
 
 nav#header_nav>ul>li ul.sub-menu li a{
 	color: #000000;
+	text-decoration: none;
 }
 
 
