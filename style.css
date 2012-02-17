@@ -273,44 +273,42 @@ nav#header_nav>ul>li {
 	width: 106px;
 	height: 150px;
 	position: relative;
-	z-index: 1;
+	z-index: 10;
 	top: -18px;
 	
 }
 
-nav#header_nav>ul li a{
+
+
+nav#header_nav>ul>li>a{
 	height: 126px;
 	display: block;
 }
 
-nav#header_nav>ul li a div.background{
+nav#header_nav>ul>li>a>div.background{
 	height: 172px;
-	z-index: 0;
+	z-index: 10;
 	display: block;
 	position: relative;
 	margin-top: -28px;
 }
 
-nav#header_nav>ul li a div.link_text{
+nav#header_nav>ul>li>a>div.link_text{
 	display: block;
 	position: relative;
-	z-index: 1;
-}
-
-
-
-nav#header_nav>ul li a:link, nav#header_nav>ul li a:visited {
-	color: #000;
-	text-decoration: none;
-}
-
-nav#header_nav>ul li a>div.link_text{
-
-
+	z-index: 11;
 	text-align: center;
 	position: relative;
 	top: 100px;
 }
+
+
+
+nav#header_nav>ul>li>a:link, nav#header_nav>ul>li>a:visited {
+	color: #000;
+	text-decoration: none;
+}
+
 
 #nav0 a div.background {
 	background: url(images/about.png) no-repeat;
@@ -332,6 +330,26 @@ nav#header_nav>ul li a>div.link_text{
 	background: url(images/blog.png) no-repeat;
 }
 
+nav#header_nav>ul>li ul.sub-menu li{
+	top: 30px;
+	left: -35px;
+	text-align: center;
+	display: inline-block;
+	position: relative;
+	z-index: 0;
+	background: url(images/subnav4.png) repeat;
+	width: 90px;
+	height: auto;
+	border-top: 1px solid #666;
+	font: bold 12px "Courier New", Courier, mono;
+	
+	padding: 5px 2px;
+}
+
+nav#header_nav>ul>li ul.sub-menu li a{
+	color: #000000;
+}
+
 
 
 ul.subnav{
@@ -347,7 +365,6 @@ ul.subnav{
 
 ul.subnav li{
 	list-style: none;
-	height: 20px;
 	float: left;
 	text-align: center;
 	width: 94px;

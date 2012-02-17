@@ -227,7 +227,7 @@ function create_post_types(){
 	create_game_type();
 	create_resource_type();
 	create_people_type();
-	create_status_taxonomy();
+	create_situation_taxonomy();
 }
 
 
@@ -373,26 +373,26 @@ function create_people_type(){
 	register_post_type('person',$args);
 }
 
-function create_status_taxonomy(){
+function create_situation_taxonomy(){
 	// Add new taxonomy, NOT hierarchical (like tags)
   $labels = array(
-    'name' => _x( 'Status', 'taxonomy general name' ),
-    'singular_name' => _x( 'Status', 'taxonomy singular name' ),
-    'search_items' =>  __( 'Search Status' ),
-    'popular_items' => __( 'Popular Status' ),
-    'all_items' => __( 'All Status' ),
+    'name' => _x( 'Situation', 'taxonomy general name' ),
+    'singular_name' => _x( 'Situation', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Situation' ),
+    'popular_items' => __( 'Popular Situation' ),
+    'all_items' => __( 'All Situations' ),
     'parent_item' => null,
     'parent_item_colon' => null,
-    'edit_item' => __( 'Edit Status' ), 
-    'update_item' => __( 'Update Status' ),
-    'add_new_item' => __( 'Add New Status' ),
-    'new_item_name' => __( 'New Status Name' ),
-    'separate_items_with_commas' => __( 'Separate status with commas' ),
-    'add_or_remove_items' => __( 'Add or remove status' ),
-    'choose_from_most_used' => __( 'Choose from the most used status' )
+    'edit_item' => __( 'Edit Situation' ), 
+    'update_item' => __( 'Update Situation' ),
+    'add_new_item' => __( 'Add New Situation' ),
+    'new_item_name' => __( 'New Situation Name' ),
+    'separate_items_with_commas' => __( 'These are people subnav filters. Separate each term with commas' ),
+    'add_or_remove_items' => __( 'Add or remove Situation' ),
+    'choose_from_most_used' => __( 'Choose from the most used Situation' )
   ); 
 
-  register_taxonomy('status','person',array(
+  register_taxonomy('situation','person',array(
     'hierarchical' => false,
     'labels' => $labels,
     'show_ui' => true,
@@ -623,7 +623,7 @@ function set_edit_person_columns($columns) {
         'cb' => '<input type="checkbox" />',
         'title' => __('Title'),
         'date' => __('Date'),
-        'status' =>__( 'Status'),
+        'situation' =>__( 'Situation'),
     );
 }
 
@@ -633,14 +633,14 @@ function custom_columns( $column ) {
 	
 	switch ( $column )
 	{
-		case 'status':
-			$terms = get_the_term_list( $post->ID , 'status' , '' , ',' , '' );
+		case 'situation':
+			$terms = get_the_term_list( $post->ID , 'situation' , '' , ',' , '' );
 			if ( is_string( $terms ) ) {
 				echo $terms;
 			}  
 			else 
 			{
-				echo 'Status not set';
+				echo 'Situation not set';
 			}
 			
 			break;

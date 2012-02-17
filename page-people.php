@@ -4,6 +4,17 @@ Template Name: People Page
 */
 ?>
 <?php get_header(); ?>
+<? 
+//	$args = array(
+//	  'theme_location'  => 'people-sub-nav',
+//	  'container'       => 'div', 
+//	  'container_class' => 'people-sub-nav', 
+//	  'menu_class'      => 'menu', 
+//	  'echo'            => true,
+//	  'items_wrap'      => '<ul id=%1$s class=%2$s>%3$s</ul>',
+//	);
+//	wp_nav_menu( $args );
+ ?>
 		<section id="main_section">
 			<section id="about_intro">
 				<?php while (have_posts()) : the_post(); ?>
