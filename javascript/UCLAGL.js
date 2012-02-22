@@ -173,10 +173,37 @@ $(document).ready(function() {
 
 
 //extra bit to have nav flag down on single post views
-//this is where we update for hangdown on people subnav
-	if( $('article').hasClass('game') ) $("li.main_nav.menu-item-461").css('top',mainNavTop);
-	else if ($('article').hasClass('resource')) $("li.main_nav.menu-item-994").css('top',mainNavTop);
-	else if ($('article').hasClass('post')) $("li.main_nav.menu-item-1348").css('top',mainNavTop);
+	if( $('article').hasClass('game') )
+	{
+		$("li.main_nav.menu-item-461").unbind('mouseenter mouseleave');
+		$("li.main_nav.menu-item-461").css('top',mainNavTop);
+	}
+	else if ($('article').hasClass('resource'))
+	{
+		$("li.main_nav.menu-item-994").unbind('mouseenter mouseleave');
+		$("li.main_nav.menu-item-994").css('top',mainNavTop);
+	}
+	else if ($('article').hasClass('post'))
+	{
+		$("li.main_nav.menu-item-1348").unbind('mouseenter mouseleave');
+		$("li.main_nav.menu-item-1348").css('top',mainNavTop);
+	}
+	else if ($('body').hasClass('tax-status'))
+	{
+		$("li.main_nav.menu-item-1787").unbind('mouseenter mouseleave');
+		$("li.main_nav.menu-item-1787").css('top',mainNavTop);
+		
+	}
+	
+	//retract sub-menu if parent is not active tab
+	if($('body').hasClass('tax-status') || $("li.main_nav.menu-item-1787").hasClass('current-menu-item'))
+	{
+		$('ul.sub-menu').css('top', -58);
+	}
+	else {
+		$('ul.sub-menu').css('top', -580);
+	}
+	
 		
 
 //  slider stuff
