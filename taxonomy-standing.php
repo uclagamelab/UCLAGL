@@ -23,17 +23,7 @@ Template Name: None
 				</p>
 			</section><!-- main_description -->
 						
-			<section id="bio_banner">
 
-					
-				<article id="bio_banner_background"><img src="<?php bloginfo('template_directory'); ?>/images/yellow_banner.png" /></article>
-				<article id="bio_banner_title">
-					<p>	<?php $term = get_term_by( 'name', single_term_title('',False), 'status') ?>
-						<span><?php single_term_title(); ?> ~</span> 
-						 <?php echo $term->description; ?>
-					</p>
-				</article>
-			</section><!-- news_feed -->
 			
 			<section id="bio_spots">
 			
@@ -50,7 +40,7 @@ Template Name: None
 								$short_description->the_value();
 							?>
 							
-							<div>Hello! </div> 
+							
 						</p>
 					</div><!-- bio_article_text -->
 					<div class="badges">
