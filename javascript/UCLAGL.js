@@ -167,7 +167,7 @@ $(document).ready(function() {
 	});
 	
 
-	$('#menu-custom-main-nav-1 li a span.separator:first').remove();
+	$('#menu-custom-footer-nav li a span.separator:first').remove();
 	
 //	end nav stuff
 

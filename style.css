@@ -1071,31 +1071,31 @@ footer {
 	height: 71px;
 }
 
-#menu-custom-main-nav-1 {
+#menu-custom-footer-nav {
 	width: 341px;
 	padding-left: 1px;
 }
 
-#menu-custom-main-nav-1 li {
+#menu-custom-footer-nav li {
 	display: inline;
 	font-size: 11px;
 }
 
-#menu-custom-main-nav-1 li a span.separator {
+#menu-custom-footer-nav li a span.separator {
 	margin-right: 7px;
 }
 
-#menu-custom-main-nav-1 li.menu-item-276 a span.separator {
+#menu-custom-footer-nav li.menu-item-276 a span.separator {
 	visibility: hidden;
 }
 
-#menu-custom-main-nav-1 li a:link{
+#menu-custom-footer-nav li a:link{
 	text-decoration: none;
 	color: white;
 	font-family: "Courier New", Courier, mono;
 }
 
-#menu-custom-main-nav-1 li a:visited {
+#menu-custom-footer-nav li a:visited {
 		text-decoration: none;
 	color: white;
 }

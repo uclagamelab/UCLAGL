@@ -182,7 +182,6 @@ function my_init()
 {
 	if (is_admin())
 	{
-//		wp_enqueue_script('custom_js_jquery',_TEMPLATEURL .'/custom/js/jquery-1.5.1.min.js');
 		wp_enqueue_script('custom_js_ui',_TEMPLATEURL .'/custom/js/jquery-ui-1.8.11.custom.min.js',array('custom_js_jquery'));
 		wp_enqueue_script('custom_js_timepicker',_TEMPLATEURL .'/custom/js/jquery-ui-timepicker-addon.js',array('custom_js_ui', 'custom_js_jquery'));
 		wp_enqueue_script('custom_js_custom',_TEMPLATEURL .'/custom/js/custom.js',array('custom_js_timepicker','custom_js_jquery'),NULL,TRUE);
